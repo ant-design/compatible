@@ -60,7 +60,7 @@ export default Form.create()(MyForm);
 Follow Component are provided compatible version:
 * Form -> LegacyForm (not yet)
 * Mention --> LegacyMention (not yet)
-* Icon --> LegacyIcon
+* Icon --> Icon
 
 ### Icon
 Just import `LegacyIcon` from package `@ant-design/compatible` and the reset is almost same as before.
@@ -69,19 +69,19 @@ Just import `LegacyIcon` from package `@ant-design/compatible` and the reset is 
 // V3
 // import { Icon, Button } from 'antd';
 // V4 with compatible
-import { LegacyIcon as Icon, Button } from '@ant-design/compatible';
+import { Icon as LegacyIcon } from '@ant-design/compatible';
 
 class MyIconList extends React.Component {
   render() {
     return (
       <div className="icons-list">
         <Button>hello button</Button>
-        <Icon type="home" />
-        <Icon type="setting" theme="filled" />
-        <Icon type="smile" theme="outlined" />
-        <Icon type="sync" spin />
-        <Icon type="smile" rotate={180} />
-        <Icon type="loading" />
+        <LegacyIcon type="home" />
+        <LegacyIcon type="setting" theme="filled" />
+        <LegacyIcon type="smile" theme="outlined" />
+        <LegacyIcon type="sync" spin />
+        <LegacyIcon type="smile" rotate={180} />
+        <LegacyIcon type="loading" />
       </div>
     );
   }
