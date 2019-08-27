@@ -75,6 +75,7 @@ describe('Icon', () => {
         <Icon type="home" />
       </Tooltip>,
     );
+
     expect(wrapper.find('span')).toHaveLength(1);
     const icon = wrapper.find('span').at(0);
     icon.simulate('mouseenter');
