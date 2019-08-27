@@ -67,14 +67,15 @@ Just import `LegacyIcon` from package `@ant-design/compatible` and the reset is 
 
 ```jsx
 // V3
-// import { Icon } from 'antd';
+// import { Icon, Button } from 'antd';
 // V4 with compatible
-import { LegacyIcon as Icon } from '@ant-design/compatible';
+import { LegacyIcon as Icon, Button } from '@ant-design/compatible';
 
 class MyIconList extends React.Component {
   render() {
     return (
       <div className="icons-list">
+        <Button>hello button</Button>
         <Icon type="home" />
         <Icon type="setting" theme="filled" />
         <Icon type="smile" theme="outlined" />
