@@ -1,2 +1,1 @@
-export { default as LegacyIcon } from './icon';
-export * from 'antd';
+export { default as Icon } from './icon';

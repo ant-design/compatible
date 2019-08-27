@@ -2,7 +2,8 @@ import React from 'react';
 import { render, mount } from 'enzyme';
 import { Tooltip } from 'antd';
 
-import Icon, { ThemeType } from '../../src/icon';
+import { Icon } from '../../src';
+import { ThemeType } from '../../src/icon';
 import { getThemeFromTypeName, withThemeSuffix } from '../../src/icon/utils';
 
 describe('Icon', () => {
