@@ -63,7 +63,7 @@ Follow Component are provided compatible version:
 * Icon --> Icon
 
 ### Icon
-Just import `LegacyIcon` from package `@ant-design/compatible` and the reset is almost same as before.
+Just import `Icon` from package `@ant-design/compatible` and the reset is almost same as before.
 
 ```jsx
 // V3
