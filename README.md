@@ -47,6 +47,32 @@ export default Form.create()(MyForm);
 ```
 
 Follow Component are provided compatible version:
-* Form -> LegacyForm
-* Mention
-* Icon
+* Form -> LegacyForm (not yet)
+* Mention --> LegacyMention (not yet)
+* Icon --> LegacyIcon
+
+## Icon
+
+```jsx
+// V3
+// import { Icon } from 'antd';
+// V4 with compatible
+import { LegacyIcon as Icon } from '@ant-design/compatible';
+
+class MyIconList extends React.Component {
+  render() {
+    return (
+      <div className="icons-list">
+        <Icon type="home" />
+        <Icon type="setting" theme="filled" />
+        <Icon type="smile" theme="outlined" />
+        <Icon type="sync" spin />
+        <Icon type="smile" rotate={180} />
+        <Icon type="loading" />
+      </div>
+    );
+  }
+}
+
+export default MyIconList;
+```
