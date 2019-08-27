@@ -1,16 +1,23 @@
 {
-  "name": "antd-compatible",
-  "version": "0.0.1",
-  "description": "",
+  "name": "@ant-design/compatible",
+  "version": "0.0.1-alpha.0",
+  "description": "Ant Design v4 compatible package",
+  "keywords": [
+    "antd",
+    "compatible"
+  ],
+  "files": [
+    "lib",
+    "es"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "authors": {
     "name": "",
     "email": ""
   },
-  "repository": "/antd-compatible",
+  "repository": "https://github.com/ant-design/compatible",
   "scripts": {
-    "cleanup": "./scripts/cleanup.sh",
     "start": "cross-env NODE_ENV=development father doc dev --storybook",
     "lint": "eslint src/ --ext .tsx,.ts",
     "compile": "father build",
