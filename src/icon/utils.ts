@@ -45,7 +45,7 @@ export function withThemeSuffix(type: string, theme: ThemeType) {
   const result = upperFirst(camelCase(type));
   const realTheme = upperFirst(themeMap[theme]);
 
-  if (!realTheme) {
+  if (theme !== 'outlined' && !realTheme) {
     warning(false, 'Icon', `This icon '${type}' has unknown theme '${theme}'`);
   }
 
