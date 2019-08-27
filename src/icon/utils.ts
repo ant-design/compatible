@@ -1,3 +1,4 @@
+import { camelCase, upperFirst } from 'lodash';
 import { ThemeType } from './index';
 import warning from '../_util/warning';
 
@@ -34,18 +35,21 @@ export function removeTypeTheme(type: string) {
     .replace(twoToneTester, '');
 }
 
+const themeMap: { [key in ThemeType]: string } = {
+  filled: 'filled',
+  outlined: '', // default theme
+  twoTone: 'twoTone',
+};
+
 export function withThemeSuffix(type: string, theme: ThemeType) {
-  let result = type;
-  if (theme === 'filled') {
-    result += '-fill';
-  } else if (theme === 'outlined') {
-    result += '-o';
-  } else if (theme === 'twoTone') {
-    result += '-twotone';
-  } else {
+  const result = upperFirst(camelCase(type));
+  const realTheme = upperFirst(themeMap[theme]);
+
+  if (!realTheme) {
     warning(false, 'Icon', `This icon '${type}' has unknown theme '${theme}'`);
   }
-  return result;
+
+  return result + realTheme;
 }
 
 // For alias or compatibility

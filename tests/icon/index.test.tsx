@@ -216,14 +216,14 @@ describe('utils', () => {
     ];
     const result = testCases.map(({ type, theme }) => withThemeSuffix(type, theme));
     expect(result).toEqual([
-      'home-fill',
-      'home-o',
-      'home-twotone',
-      'home',
-      'home-o-fill',
-      'home-fill-o',
-      'home-o-twotone',
-      'home-o',
+      'HomeFilled',
+      'Home',
+      'HomeTwoTone',
+      'Home',
+      'HomeOFilled',
+      'HomeFill',
+      'HomeOTwoTone',
+      'HomeO',
     ]);
   });
 
