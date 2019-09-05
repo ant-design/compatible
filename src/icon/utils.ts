@@ -1,4 +1,5 @@
-import { camelCase, upperFirst } from 'lodash';
+import camelCase from 'lodash.camelcase';
+import upperFirst from 'lodash.upperfirst';
 import { ThemeType } from './index';
 import warning from '../_util/warning';
 
