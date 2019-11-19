@@ -12,5 +12,6 @@ module.exports = {
     'no-continue': 0,
     'jsx-a11y/label-has-for': 0,
     'react/sort-comp': 0,
+    'react/prefer-stateless-function': 0,
   },
 };

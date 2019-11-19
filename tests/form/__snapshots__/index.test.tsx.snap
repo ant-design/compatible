@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form should render correctly 1`] = `
+<form
+  class="ant-legacy-form ant-legacy-form-horizontal"
+>
+  <div
+    class="ant-row ant-legacy-form-item"
+  >
+    <div
+      class="ant-col ant-legacy-form-item-control-wrapper"
+    >
+      <div
+        class="ant-legacy-form-item-control"
+      >
+        <span
+          class="ant-legacy-form-item-children"
+        >
+          <input
+            class="ant-input"
+            data-__field="[object Object]"
+            data-__meta="[object Object]"
+            id="name"
+            type="text"
+            value=""
+          />
+        </span>
+      </div>
+    </div>
+  </div>
+</form>
+`;
