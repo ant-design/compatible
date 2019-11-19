@@ -8,7 +8,8 @@
   ],
   "files": [
     "lib",
-    "es"
+    "es",
+    "assets/*.css"
   ],
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -16,15 +17,21 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development father doc dev --storybook",
     "lint": "eslint src/ --ext .tsx,.ts",
-    "compile": "father build",
+    "compile": "father build && npm run compile:style",
+    "compile:style": "lessc --js assets/index.less assets/index.css",
     "test": "father test",
     "prepublishOnly": "npm run lint && npm run test && npm run compile && np --no-cleanup --yolo --no-publish"
   },
   "license": "MIT",
   "dependencies": {
     "@ant-design/icons": "^4.0.0-alpha.8",
+    "antd": "^4.0.0-alpha.9",
+    "classnames": "^2.2.6",
     "lodash.camelcase": "^4.3.0",
     "lodash.upperfirst": "^4.3.1",
+    "omit.js": "^1.0.2",
+    "rc-animate": "^2.10.2",
+    "rc-form": "^2.4.10",
     "rc-util": "^4.10.0"
   },
   "peerDependencies": {
@@ -35,11 +42,11 @@
     "@types/jest": "^24.0.18",
     "@types/lodash": "^4.14.137",
     "@types/react": "^16.9.2",
-    "antd": "^4.0.0-alpha.2",
     "cross-env": "^5.2.0",
     "enzyme": "^3.10.0",
     "enzyme-to-json": "^3.4.0",
     "father": "^2.14.0",
+    "less": "^3.10.3",
     "np": "^5.0.3",
     "typescript": "^3.3.3"
   }
