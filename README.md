@@ -21,9 +21,10 @@ import { Form, Input, Button } from 'antd';
 
 class MyForm extends React.Component {
   render() {
+    const { form } = this.props
     return (
       <Form>
-        {getFieldDecorator('username')(
+        {form.getFieldDecorator('username')(
           <Input />,
         )}
         <Button>Submit</Button>
@@ -43,9 +44,10 @@ import { LegacyForm as Form, Input, Button } from '@ant-design/compatible';
 
 class MyForm extends React.Component {
   render() {
+    const { form } = this.props
     return (
       <Form>
-        {getFieldDecorator('username')(
+        {form.getFieldDecorator('username')(
           <Input />,
         )}
         <Button>Submit</Button>
