@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Mention should render correctly 1`] = `
+<div
+  class="ant-mention-wrapper"
+  style="width:100%"
+>
+  <div
+    class="ant-mention-editor oneline"
+    style="width:100%"
+  >
+    <div
+      class="ant-mention-toolbar"
+    />
+    <div
+      class="ant-mention-editor-wrapper"
+      style="width:100%"
+    >
+      <div
+        class="DraftEditor-root"
+      >
+        <div
+          class="DraftEditor-editorContainer"
+        >
+          <div
+            aria-describedby="placeholder-dp314"
+            class="notranslate public-DraftEditor-content"
+            contenteditable="true"
+            role="textbox"
+            spellcheck="false"
+            style="outline:none;user-select:text;-webkit-user-select:text;white-space:pre-wrap;word-wrap:break-word"
+          >
+            <div
+              data-contents="true"
+            >
+              <div
+                class=""
+                data-block="true"
+                data-editor="dp314"
+                data-offset-key="1i15e-0-0"
+              >
+                <div
+                  class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"
+                  data-offset-key="1i15e-0-0"
+                >
+                  <span
+                    data-offset-key="1i15e-0-0"
+                  >
+                    <br
+                      data-text="true"
+                    />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
