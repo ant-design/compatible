@@ -38,7 +38,7 @@ export function removeTypeTheme(type: string) {
 
 const themeMap: { [key in ThemeType]: string } = {
   filled: 'filled',
-  outlined: '', // default theme
+  outlined: 'outlined', // default theme
   twoTone: 'twoTone',
 };
 
