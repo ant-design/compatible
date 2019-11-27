@@ -8,7 +8,9 @@ import { getThemeFromTypeName, withThemeSuffix } from '../../src/icon/utils';
 
 describe('Icon', () => {
   it('should render to a <i class="xxx"><svg>...</svg></i>', () => {
-    const wrapper = render(<Icon type="message" className="my-icon-classname" />);
+    const wrapper = render(
+      <Icon type="message" className="my-icon-classname" />,
+    );
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -38,7 +40,9 @@ describe('Icon', () => {
   });
 
   it('should support two-tone icon', () => {
-    const wrapper = render(<Icon type="check-circle" theme="twoTone" twoToneColor="#f5222d" />);
+    const wrapper = render(
+      <Icon type="check-circle" theme="twoTone" twoToneColor="#f5222d" />,
+    );
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -96,7 +100,12 @@ describe('Icon', () => {
 
   it('support render svg as component', () => {
     const renderSvg = () => (
-      <svg viewBox="0 0 1024 1024" width="1em" height="1em" fill="currentColor" />
+      <svg
+        viewBox="0 0 1024 1024"
+        width="1em"
+        height="1em"
+        fill="currentColor"
+      />
     );
     const SvgIcon = props => <Icon component={renderSvg} {...props} />;
 
@@ -215,14 +224,16 @@ describe('utils', () => {
       { type: 'home-o', theme: 'twoTone' },
       { type: 'home-o', theme: 'This-is-the-secret' as any },
     ];
-    const result = testCases.map(({ type, theme }) => withThemeSuffix(type, theme));
+    const result = testCases.map(({ type, theme }) =>
+      withThemeSuffix(type, theme),
+    );
     expect(result).toEqual([
       'HomeFilled',
-      'Home',
+      'HomeOutlined',
       'HomeTwoTone',
       'Home',
       'HomeOFilled',
-      'HomeFill',
+      'HomeFillOutlined',
       'HomeOTwoTone',
       'HomeO',
     ]);
