@@ -23,7 +23,7 @@ exports[`Mention should render correctly 1`] = `
           class="DraftEditor-editorContainer"
         >
           <div
-            aria-describedby="placeholder-dp314"
+            aria-describedby="placeholder-123"
             class="notranslate public-DraftEditor-content"
             contenteditable="true"
             role="textbox"
@@ -36,15 +36,15 @@ exports[`Mention should render correctly 1`] = `
               <div
                 class=""
                 data-block="true"
-                data-editor="dp314"
-                data-offset-key="1i15e-0-0"
+                data-editor="123"
+                data-offset-key="123-0-0"
               >
                 <div
                   class="public-DraftStyleDefault-block public-DraftStyleDefault-ltr"
-                  data-offset-key="1i15e-0-0"
+                  data-offset-key="123-0-0"
                 >
                   <span
-                    data-offset-key="1i15e-0-0"
+                    data-offset-key="123-0-0"
                   >
                     <br
                       data-text="true"

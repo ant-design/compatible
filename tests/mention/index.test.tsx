@@ -2,6 +2,8 @@ import React from 'react';
 import { render } from 'enzyme';
 import { Mention } from '../../src';
 
+jest.mock('draft-js/lib/generateRandomKey', () => () => '123');
+
 describe('Mention', () => {
   it('should render correctly', () => {
     const MentionWrapper = (
