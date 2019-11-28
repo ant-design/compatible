@@ -1,6 +1,8 @@
 import React from 'react';
 import { Mention } from '../src';
-import '../src/mention/style/index.less';
+// Fix less resovle fail, so before start run compile style
+// eslint-disable-next-line import/no-unresolved
+import '../assets/index.css';
 
 const { toString, toContentState } = Mention;
 

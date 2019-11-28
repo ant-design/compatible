@@ -15,7 +15,7 @@
   "module": "es/index.js",
   "repository": "https://github.com/ant-design/compatible",
   "scripts": {
-    "start": "cross-env NODE_ENV=development father doc dev --storybook",
+    "start": "npm run compile:style && cross-env NODE_ENV=development father doc dev --storybook",
     "lint": "eslint src/ --ext .tsx,.ts",
     "compile": "father build && npm run compile:style",
     "compile:style": "lessc --js assets/index.less assets/index.css",
