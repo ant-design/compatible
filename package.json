@@ -15,7 +15,7 @@
   "module": "es/index.js",
   "repository": "https://github.com/ant-design/compatible",
   "scripts": {
-    "start": "cross-env NODE_ENV=development father doc dev --storybook",
+    "start": "npm run compile:style && cross-env NODE_ENV=development father doc dev --storybook",
     "lint": "eslint src/ --ext .tsx,.ts",
     "compile": "father build && npm run compile:style",
     "compile:style": "lessc --js assets/index.less assets/index.css",
@@ -31,6 +31,7 @@
     "lodash.upperfirst": "^4.3.1",
     "omit.js": "^1.0.2",
     "rc-animate": "^2.10.2",
+    "rc-editor-mention": "^1.1.13",
     "rc-form": "^2.4.10",
     "rc-util": "^4.10.0"
   },
