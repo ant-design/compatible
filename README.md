@@ -48,7 +48,7 @@ Change to:
 // V4 with compatible
 import { Form as LegacyForm } from '@ant-design/compatible';
 import { Input, Button } from 'antd';
-import '@ant-design/compatible/assets/index.less';
+import '@ant-design/compatible/assets/index.css';
 
 class MyForm extends React.Component {
   render() {
@@ -75,7 +75,7 @@ Just import `Icon` from package `@ant-design/compatible` and the reset is almost
 // import { Icon, Button } from 'antd';
 // V4 with compatible
 import { Icon as LegacyIcon } from '@ant-design/compatible';
-import '@ant-design/compatible/assets/index.less';
+import '@ant-design/compatible/assets/index.css';
 
 class MyIconList extends React.Component {
   render() {
