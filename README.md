@@ -72,10 +72,32 @@ Just import `Icon` from package `@ant-design/compatible` and the reset is almost
 
 ```jsx
 // V3
-// import { Icon, Button } from 'antd';
+import { Icon, Button } from 'antd';
+
+class MyIconList extends React.Component {
+  render() {
+    return (
+      <div className="icons-list">
+        <Button>hello button</Button>
+        <Icon type="home" />
+        <Icon type="setting" theme="filled" />
+        <Icon type="smile" theme="outlined" />
+        <Icon type="sync" spin />
+        <Icon type="smile" rotate={180} />
+        <Icon type="loading" />
+      </div>
+    );
+  }
+}
+
+export default MyIconList;
+```
+
+Change to:
+
+```jsx
 // V4 with compatible
 import { Icon as LegacyIcon } from '@ant-design/compatible';
-import '@ant-design/compatible/assets/index.css';
 
 class MyIconList extends React.Component {
   render() {
@@ -101,7 +123,7 @@ export default MyIconList;
 The legacy usage in v3
 
 ```jsx
-import { Mention } from '@ant-design/compatible';
+import { Mention } from 'antd';
 
 const { toString } = Mention;
 
@@ -118,8 +140,10 @@ ReactDOM.render(
 ```
 
 Compatible usage in v4
+
 ```jsx
-import { Mention } from 'antd';
+import { Mention } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
 
 const { toString } = Mention;
 
