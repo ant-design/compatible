@@ -13,7 +13,13 @@ yarn add @ant-design/compatible
 
 Helps you to compatible different components between v3 and v4.
 
-For example, Form of v3 api is different with v4:
+Follow Component are provided compatible version:
+* Form
+* Icon
+* Mention
+
+### Form
+Form of v3 api is different with v4:
 
 ```jsx
 // V3
@@ -40,29 +46,26 @@ Change to:
 
 ```jsx
 // V4 with compatible
-import { LegacyForm as Form, Input, Button } from '@ant-design/compatible';
+import { Form as LegacyForm } from '@ant-design/compatible';
+import { Input, Button } from 'antd';
+import '@ant-design/compatible/assets/index.less';
 
 class MyForm extends React.Component {
   render() {
     const { form } = this.props
     return (
-      <Form>
+      <LegacyForm>
         {form.getFieldDecorator('username')(
           <Input />,
         )}
         <Button>Submit</Button>
-      </Form>
+      </LegacyForm>
     );
   }
 }
 
 export default Form.create()(MyForm);
 ```
-
-Follow Component are provided compatible version:
-* Form -> LegacyForm (not yet)
-* Mention --> LegacyMention (not yet)
-* Icon --> Icon
 
 ### Icon
 Just import `Icon` from package `@ant-design/compatible` and the reset is almost same as before.
@@ -72,6 +75,7 @@ Just import `Icon` from package `@ant-design/compatible` and the reset is almost
 // import { Icon, Button } from 'antd';
 // V4 with compatible
 import { Icon as LegacyIcon } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.less';
 
 class MyIconList extends React.Component {
   render() {
@@ -90,4 +94,43 @@ class MyIconList extends React.Component {
 }
 
 export default MyIconList;
+```
+
+### Mention
+
+The legacy usage in v3
+
+```jsx
+import { Mention } from '@ant-design/compatible';
+
+const { toString } = Mention;
+
+ReactDOM.render(
+  <Mention
+    style={{ width: '100%' }}
+    onChange={onChange}
+    defaultSuggestions={['afc163', 'benjycui', 'yiminghe', 'RaoHai', '中文', 'にほんご']}
+    onSelect={onSelect}
+    placement="top"
+  />,
+  mountNode,
+);
+```
+
+Compatible usage in v4
+```jsx
+import { Mention } from 'antd';
+
+const { toString } = Mention;
+
+ReactDOM.render(
+  <Mention
+    style={{ width: '100%' }}
+    onChange={onChange}
+    defaultSuggestions={['afc163', 'benjycui', 'yiminghe', 'RaoHai', '中文', 'にほんご']}
+    onSelect={onSelect}
+    placement="top"
+  />,
+  mountNode,
+);
 ```
