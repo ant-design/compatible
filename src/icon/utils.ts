@@ -13,6 +13,7 @@ export const svgBaseProps = {
   focusable: 'false',
 };
 
+// moved from https://github.com/ant-design/ant-design/blob/master/components/icon/utils.ts
 const fillTester = /-fill$/;
 const outlineTester = /-o$/;
 const twoToneTester = /-twotone$/;

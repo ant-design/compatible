@@ -260,4 +260,13 @@ describe('utils', () => {
     expect(errorSpy).toHaveBeenCalledTimes(4);
     errorSpy.mockRestore();
   });
+
+  it('should report an error when icon type doesnot exist', () => {
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+    render(<Icon type="cross-circle-o" />);
+    expect(errorSpy).toHaveBeenLastCalledWith(
+      "Warning: [antd-compatible: Icon] The icon name 'cross-circle-o' doesn't exist, please check it at https://ant.design/components/icon",
+    );
+    errorSpy.mockRestore();
+  });
 });
