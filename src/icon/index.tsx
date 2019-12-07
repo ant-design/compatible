@@ -6,7 +6,12 @@ import AntdIcon, {
   setTwoToneColor,
 } from '@ant-design/icons';
 
-import { withThemeSuffix, removeTypeTheme, getThemeFromTypeName, alias } from './utils';
+import {
+  withThemeSuffix,
+  removeTypeTheme,
+  getThemeFromTypeName,
+  alias,
+} from './utils';
 import warning from '../_util/warning';
 
 export interface CustomIconComponentProps {
@@ -69,8 +74,22 @@ const LegacyTypeIcon: React.FC<LegacyTypeIconProps> = props => {
         ` the 'theme' prop '${theme}' will be ignored.`,
     );
   }
-  const computedType = withThemeSuffix(removeTypeTheme(alias(type)), theme || 'outlined');
-  return iconsMap[computedType] ? React.createElement(iconsMap[computedType], props) : null;
+  const computedType = withThemeSuffix(
+    removeTypeTheme(alias(type)),
+    theme || 'outlined',
+  );
+  const targetIconComponent = iconsMap[computedType];
+  warning(
+    targetIconComponent,
+    'Icon',
+    `The icon name '${type}'${
+      theme ? `with ${theme}` : ''
+      } doesn't exist, please check it at https://ant.design/components/icon`,
+  );
+
+  return targetIconComponent
+    ? React.createElement(targetIconComponent, props)
+    : null;
 };
 
 const Icon: IconComponent<IconProps> = props => {
