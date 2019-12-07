@@ -9,7 +9,7 @@
 yarn add @ant-design/compatible
 ```
 
-## Introduction
+## Usage
 
 Helps you to compatible different components between v3 and v4.
 
@@ -17,6 +17,14 @@ Follow Component are provided compatible version:
 * Form
 * Icon
 * Mention
+
+```jsx
+import { Form } from '@ant-design/compatible';
+
+import '@ant-design/compatible/assets/index.css' // If you need
+```
+
+## Introduction
 
 ### Form
 Form of v3 api is different with v4:
