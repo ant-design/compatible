@@ -11,6 +11,9 @@ import FormItem, { FormLabelAlign } from './FormItem';
 import { FIELD_META_PROP, FIELD_DATA_PROP } from './constants';
 import FormContext from './context';
 import { FormWrappedProps } from './interface';
+import upgradeMessage from '../_util/upgradeMessage';
+
+upgradeMessage('Form');
 
 type FormCreateOptionMessagesCallback = (...args: any[]) => string;
 

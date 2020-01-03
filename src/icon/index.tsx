@@ -13,6 +13,9 @@ import {
   alias,
 } from './utils';
 import warning from '../_util/warning';
+import upgradeMessage from '../_util/upgradeMessage';
+
+upgradeMessage('Icon');
 
 export interface CustomIconComponentProps {
   width: string | number;
@@ -84,7 +87,7 @@ const LegacyTypeIcon: React.FC<LegacyTypeIconProps> = props => {
     'Icon',
     `The icon name '${type}'${
       theme ? `with ${theme}` : ''
-      } doesn't exist, please check it at https://ant.design/components/icon`,
+    } doesn't exist, please check it at https://ant.design/components/icon`,
   );
 
   return targetIconComponent
