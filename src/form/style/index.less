@@ -9,7 +9,8 @@
 @form-component-height: @input-height-base;
 @form-component-max-height: @input-height-lg;
 @form-feedback-icon-size: @font-size-base;
-@form-help-margin-top: (@form-component-height - @form-component-max-height) / 2 + 2px;
+@form-help-margin-top: (@form-component-height - @form-component-max-height) / 2 +
+  2px;
 @form-explain-font-size: @font-size-base;
 // Extends additional 1px to fix precision issue.
 // https://github.com/ant-design/ant-design/issues/12803
@@ -48,7 +49,8 @@
 
     position: relative;
     top: -0.5px;
-    margin: 0 @form-item-label-colon-margin-right 0 @form-item-label-colon-margin-left;
+    margin: 0 @form-item-label-colon-margin-right 0
+      @form-item-label-colon-margin-left;
   }
 
   &.@{form-prefix-cls}-item-no-colon::after {
@@ -84,7 +86,10 @@
   }
 
   &-with-help {
-    margin-bottom: max(0, @form-item-margin-bottom - @form-explain-height - @form-help-margin-top);
+    margin-bottom: max(
+      0,
+      @form-item-margin-bottom - @form-explain-height - @form-help-margin-top
+    );
   }
 
   &-label {
@@ -137,22 +142,35 @@
 form {
   .has-feedback {
     .@{ant-prefix}-input {
-      padding-right: 24px;
+      padding-right: @input-padding-horizontal-base + @input-affix-width;
     }
 
-    .@{ant-prefix}-input-password-icon {
-      margin-right: 18px;
+    // https://github.com/ant-design/ant-design/issues/19884
+    .@{ant-prefix}-input-affix-wrapper {
+      .@{ant-prefix}-input-suffix {
+        padding-right: 18px;
+      }
+      .@{ant-prefix}-input {
+        padding-right: @input-padding-horizontal-base + @input-affix-width * 2;
+      }
+      &.@{ant-prefix}-input-affix-wrapper-input-with-clear-btn {
+        .@{ant-prefix}-input {
+          padding-right: @input-padding-horizontal-base + @input-affix-width * 3;
+        }
+      }
     }
 
     // Fix overlapping between feedback icon and <Select>'s arrow.
     // https://github.com/ant-design/ant-design/issues/4431
     > .@{ant-prefix}-select .@{ant-prefix}-select-arrow,
     > .@{ant-prefix}-select .@{ant-prefix}-select-selection__clear,
-    :not(.@{ant-prefix}-input-group-addon) > .@{ant-prefix}-select .@{ant-prefix}-select-arrow,
+    :not(.@{ant-prefix}-input-group-addon)
+      > .@{ant-prefix}-select
+      .@{ant-prefix}-select-arrow,
     :not(.@{ant-prefix}-input-group-addon)
       > .@{ant-prefix}-select
       .@{ant-prefix}-select-selection__clear {
-      right: 28px;
+      right: (@form-component-height / 2) + @form-feedback-icon-size - 2px;
     }
     > .@{ant-prefix}-select .@{ant-prefix}-select-selection-selected-value,
     :not(.@{ant-prefix}-input-group-addon)
@@ -163,17 +181,18 @@ form {
 
     .@{ant-prefix}-cascader-picker {
       &-arrow {
-        margin-right: 17px;
+        margin-right: (@form-component-height / 2) + @form-feedback-icon-size -
+          13px;
       }
       &-clear {
-        right: 28px;
+        right: (@form-component-height / 2) + @form-feedback-icon-size - 2px;
       }
     }
 
     // Fix issue: https://github.com/ant-design/ant-design/issues/7854
     .@{ant-prefix}-input-search:not(.@{ant-prefix}-input-search-enter-button) {
       .@{ant-prefix}-input-suffix {
-        right: 28px;
+        right: (@form-component-height / 2) + @form-feedback-icon-size - 2px;
       }
     }
 
@@ -182,7 +201,7 @@ form {
     .@{ant-prefix}-time-picker {
       &-icon,
       &-clear {
-        right: 28px;
+        right: (@form-component-height / 2) + @form-feedback-icon-size - 2px;
       }
     }
   }
@@ -406,7 +425,9 @@ form {
 }
 
 .has-warning {
-  .form-control-validation(@warning-color; @warning-color; @form-warning-input-bg;);
+  .form-control-validation(
+    @warning-color; @warning-color; @form-warning-input-bg;
+  );
 
   &.has-feedback .@{form-prefix-cls}-item-children-icon {
     color: @warning-color;
@@ -449,8 +470,13 @@ form {
     }
   }
 
-  .@{ant-prefix}-cascader-picker:focus .@{ant-prefix}-cascader-input {
-    .active(@warning-color);
+  .@{ant-prefix}-cascader-picker {
+    &:focus .@{ant-prefix}-cascader-input {
+      .active(@warning-color);
+    }
+    &:hover .@{ant-prefix}-cascader-input {
+      border-color: @warning-color;
+    }
   }
 }
 
@@ -517,14 +543,20 @@ form {
         border-color: @error-color;
       }
     }
-    &.@{ant-prefix}-mention-active:not([disabled]) .@{ant-prefix}-mention-editor,
+    &.@{ant-prefix}-mention-active:not([disabled])
+      .@{ant-prefix}-mention-editor,
     .@{ant-prefix}-mention-editor:not([disabled]):focus {
       .active(@error-color);
     }
   }
 
-  .@{ant-prefix}-cascader-picker:focus .@{ant-prefix}-cascader-input {
-    .active(@error-color);
+  .@{ant-prefix}-cascader-picker {
+    &:focus .@{ant-prefix}-cascader-input {
+      .active(@error-color);
+    }
+    &:hover .@{ant-prefix}-cascader-input {
+      border-color: @error-color;
+    }
   }
 
   // transfer
@@ -559,7 +591,8 @@ form {
     margin-bottom: @form-item-margin-bottom;
 
     &-with-help {
-      margin-bottom: @form-item-margin-bottom - @form-explain-height - @form-help-margin-top;
+      margin-bottom: @form-item-margin-bottom - @form-explain-height -
+        @form-help-margin-top;
     }
   }
 }
