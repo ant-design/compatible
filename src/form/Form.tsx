@@ -13,8 +13,6 @@ import FormContext from './context';
 import { FormWrappedProps } from './interface';
 import upgradeMessage from '../_util/upgradeMessage';
 
-upgradeMessage('Form');
-
 type FormCreateOptionMessagesCallback = (...args: any[]) => string;
 
 interface FormCreateOptionMessages {
@@ -256,6 +254,8 @@ export default class Form extends React.Component<FormProps, any> {
       'Form',
       'It is unnecessary to pass `form` to `Form` after antd@1.7.0.',
     );
+
+    upgradeMessage('Form');
   }
 
   renderForm = ({ getPrefixCls }: ConfigConsumerProps) => {

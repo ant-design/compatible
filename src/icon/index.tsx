@@ -15,8 +15,6 @@ import {
 import warning from '../_util/warning';
 import upgradeMessage from '../_util/upgradeMessage';
 
-upgradeMessage('Icon');
-
 export interface CustomIconComponentProps {
   width: string | number;
   height: string | number;
@@ -97,6 +95,9 @@ const LegacyTypeIcon: React.FC<LegacyTypeIconProps> = props => {
 
 const Icon: IconComponent<IconProps> = props => {
   const { type, component, children } = props;
+
+  upgradeMessage('Icon');
+
   warning(
     Boolean(type || component || children),
     'Icon',
