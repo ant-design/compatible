@@ -8,7 +8,7 @@ import RcMention, {
 import classNames from 'classnames';
 import { ConfigConsumer, ConfigConsumerProps } from 'antd/lib/config-provider';
 import Icon from '../icon';
-import warning from '../_util/warning';
+import upgradeMessage from '../_util/upgradeMessage';
 
 export type MentionPlacement = 'top' | 'bottom';
 
@@ -69,11 +69,7 @@ class Mention extends React.Component<MentionProps, MentionState> {
       focus: false,
     };
 
-    warning(
-      false,
-      'Mention',
-      'Mention component is deprecated. Please use Mentions component instead.',
-    );
+    upgradeMessage('Mention');
   }
 
   mentionRef = (ele: any) => {

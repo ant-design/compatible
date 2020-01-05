@@ -11,6 +11,7 @@ import FormItem, { FormLabelAlign } from './FormItem';
 import { FIELD_META_PROP, FIELD_DATA_PROP } from './constants';
 import FormContext from './context';
 import { FormWrappedProps } from './interface';
+import upgradeMessage from '../_util/upgradeMessage';
 
 type FormCreateOptionMessagesCallback = (...args: any[]) => string;
 
@@ -253,6 +254,8 @@ export default class Form extends React.Component<FormProps, any> {
       'Form',
       'It is unnecessary to pass `form` to `Form` after antd@1.7.0.',
     );
+
+    upgradeMessage('Form');
   }
 
   renderForm = ({ getPrefixCls }: ConfigConsumerProps) => {
