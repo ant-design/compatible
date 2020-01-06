@@ -304,6 +304,10 @@ form {
   }
 }
 
+.@{form-prefix-cls}-vertical {
+  .make-vertical-layout();
+}
+
 .@{form-prefix-cls}-vertical .@{form-prefix-cls}-item-label,
   // when labelCol is 24, it is a vertical form
 .@{ant-prefix}-col-24.@{form-prefix-cls}-item-label,
@@ -329,7 +333,6 @@ form {
 }
 
 @media (max-width: @screen-xs-max) {
-  .make-vertical-layout();
   .@{ant-prefix}-col-xs-24.@{form-prefix-cls}-item-label {
     .make-vertical-layout-label();
   }
