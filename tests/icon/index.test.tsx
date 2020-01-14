@@ -6,7 +6,11 @@ import { Icon } from '../../src';
 import { ThemeType } from '../../src/icon';
 import { getThemeFromTypeName, withThemeSuffix } from '../../src/icon/utils';
 
+import { mountTest } from '../utils';
+
 describe('Icon', () => {
+  mountTest(Icon);
+
   it('should render to a <i class="xxx"><svg>...</svg></i>', () => {
     const wrapper = render(
       <Icon type="message" className="my-icon-classname" />,
@@ -187,6 +191,9 @@ describe('Icon', () => {
 describe('Icon.createFromIconfontCN()', () => {
   const IconFont = Icon.createFromIconfontCN({
     scriptUrl: '//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js',
+    extraCommonProps: {
+      className: 'abc',
+    },
   });
 
   it('should support iconfont.cn', () => {
@@ -195,6 +202,17 @@ describe('Icon.createFromIconfontCN()', () => {
         <IconFont type="icon-tuichu" />
         <IconFont type="icon-facebook" />
         <IconFont type="icon-twitter" />
+      </div>,
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('extraCommonProps should works fine and can be overwritten', () => {
+    const wrapper = render(
+      <div className="icons-list">
+        <IconFont type="icon-tuichu" className="bcd" />
+        <IconFont type="icon-facebook" />
+        <IconFont type="icon-twitter" className="efg" />
       </div>,
     );
     expect(wrapper).toMatchSnapshot();
