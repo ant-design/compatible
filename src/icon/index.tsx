@@ -50,7 +50,9 @@ interface LegacyTypeIconProps extends CoreIconProps {
 
 export interface IconProps extends CoreIconProps {
   type?: string;
-  component?: React.ComponentType<CustomIconComponentProps>;
+  component?: React.ComponentType<
+    CustomIconComponentProps | React.SVGProps<SVGSVGElement>
+  >;
 }
 
 export interface IconComponent<P> extends React.SFC<P> {
