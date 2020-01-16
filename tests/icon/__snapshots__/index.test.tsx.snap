@@ -408,7 +408,7 @@ exports[`Icon.createFromIconfontCN() extraCommonProps should works fine and can 
   class="icons-list"
 >
   <span
-    class="anticon abc"
+    class="anticon bcd"
     role="img"
   >
     <svg
@@ -442,7 +442,7 @@ exports[`Icon.createFromIconfontCN() extraCommonProps should works fine and can 
     </svg>
   </span>
   <span
-    class="anticon abc"
+    class="anticon efg"
     role="img"
   >
     <svg
