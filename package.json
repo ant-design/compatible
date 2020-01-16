@@ -1,6 +1,6 @@
 {
   "name": "@ant-design/compatible",
-  "version": "0.0.1-rc.0",
+  "version": "0.0.1-rc.1",
   "description": "Ant Design v3 to v4 compatible package",
   "keywords": [
     "antd",
