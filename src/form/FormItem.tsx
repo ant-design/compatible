@@ -10,7 +10,12 @@ import warning from '../_util/warning';
 import { tuple } from '../_util/types';
 import { FIELD_META_PROP, FIELD_DATA_PROP } from './constants';
 import FormContext, { FormContextProps } from './context';
-import Icon from '../icon';
+import {
+  CheckCircleFilled,
+  CloseCircleFilled,
+  ExclamationCircleFilled,
+  LoadingOutlined,
+} from '@ant-design/icons';
 
 const ValidateStatuses = tuple('success', 'warning', 'error', 'validating', '');
 
@@ -252,32 +257,28 @@ export default class FormItem extends React.Component<FormItemProps, any> {
       });
     }
 
-    let iconType = '';
+    let iconType: React.ReactNode = null;
     switch (validateStatus) {
       case 'success':
-        iconType = 'check-circle';
+        iconType = <CheckCircleFilled />;
         break;
       case 'warning':
-        iconType = 'exclamation-circle';
+        iconType = <ExclamationCircleFilled />;
         break;
       case 'error':
-        iconType = 'close-circle';
+        iconType = <CloseCircleFilled />;
         break;
       case 'validating':
-        iconType = 'loading';
+        iconType = <LoadingOutlined />;
         break;
       default:
-        iconType = '';
         break;
     }
 
     const icon =
       props.hasFeedback && iconType ? (
         <span className={`${prefixCls}-item-children-icon`}>
-          <Icon
-            type={iconType}
-            theme={iconType === 'loading' ? 'outlined' : 'filled'}
-          />
+          {iconType}
         </span>
       ) : null;
 
