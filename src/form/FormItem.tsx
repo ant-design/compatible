@@ -10,12 +10,10 @@ import warning from '../_util/warning';
 import { tuple } from '../_util/types';
 import { FIELD_META_PROP, FIELD_DATA_PROP } from './constants';
 import FormContext, { FormContextProps } from './context';
-import {
-  CheckCircleFilled,
-  CloseCircleFilled,
-  ExclamationCircleFilled,
-  LoadingOutlined,
-} from '@ant-design/icons';
+import CheckCircleFilled from '@ant-design/icons/CheckCircleFilled';
+import CloseCircleFilled from '@ant-design/icons/CloseCircleFilled';
+import ExclamationCircleFilled from '@ant-design/icons/ExclamationCircleFilled';
+import LoadingOutlined from '@ant-design/icons/LoadingOutlined';
 
 const ValidateStatuses = tuple('success', 'warning', 'error', 'validating', '');
 
