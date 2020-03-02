@@ -11,6 +11,11 @@
     "es",
     "assets/*.css"
   ],
+  "sideEffects": [
+    "es/**/style/*",
+    "lib/**/style/*",
+    "assets/*"
+  ],
   "main": "lib/index.js",
   "module": "es/index.js",
   "repository": "https://github.com/ant-design/compatible",
