@@ -3,6 +3,12 @@ import * as ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import Animate from 'rc-animate';
 import omit from 'omit.js';
+import {
+  CheckCircleFilled,
+  ExclamationCircleFilled,
+  CloseCircleFilled,
+  LoadingOutlined,
+} from '@ant-design/icons';
 import Row from 'antd/lib/grid/row';
 import Col, { ColProps } from 'antd/lib/grid/col';
 import { ConfigConsumer, ConfigConsumerProps } from 'antd/lib/config-provider';
@@ -10,7 +16,6 @@ import warning from '../_util/warning';
 import { tuple } from '../_util/types';
 import { FIELD_META_PROP, FIELD_DATA_PROP } from './constants';
 import FormContext, { FormContextProps } from './context';
-import Icon from '../icon';
 
 const ValidateStatuses = tuple('success', 'warning', 'error', 'validating', '');
 
@@ -252,32 +257,17 @@ export default class FormItem extends React.Component<FormItemProps, any> {
       });
     }
 
-    let iconType = '';
-    switch (validateStatus) {
-      case 'success':
-        iconType = 'check-circle';
-        break;
-      case 'warning':
-        iconType = 'exclamation-circle';
-        break;
-      case 'error':
-        iconType = 'close-circle';
-        break;
-      case 'validating':
-        iconType = 'loading';
-        break;
-      default:
-        iconType = '';
-        break;
-    }
+    const statusMap = {
+      success: <CheckCircleFilled />,
+      warning: <ExclamationCircleFilled />,
+      error: <CloseCircleFilled />,
+      validating: <LoadingOutlined />,
+    };
 
     const icon =
-      props.hasFeedback && iconType ? (
+      props.hasFeedback && statusMap[validateStatus] ? (
         <span className={`${prefixCls}-item-children-icon`}>
-          <Icon
-            type={iconType}
-            theme={iconType === 'loading' ? 'outlined' : 'filled'}
-          />
+          { statusMap[validateStatus] }
         </span>
       ) : null;
 
