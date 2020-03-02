@@ -13,7 +13,8 @@
   ],
   "sideEffects": [
     "es/**/style/*",
-    "lib/**/style/*"
+    "lib/**/style/*",
+    "assets/*"
   ],
   "main": "lib/index.js",
   "module": "es/index.js",
