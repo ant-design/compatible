@@ -1,6 +1,6 @@
 {
   "name": "@ant-design/compatible",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Ant Design v3 to v4 compatible package",
   "keywords": [
     "antd",
@@ -43,9 +43,9 @@
     "rc-util": "^4.10.0"
   },
   "peerDependencies": {
+    "antd": ">=3.0.0",
     "react": ">=16.0.0",
-    "react-dom": ">=16.0.0",
-    "antd": ">=3.0.0"
+    "react-dom": ">=16.0.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.18",
