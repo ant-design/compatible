@@ -93,7 +93,7 @@
   }
 
   &-label {
-    display: inline-flex;
+    display: inline-block;
     overflow: hidden;
     line-height: @form-component-max-height - 0.0001px;
     white-space: nowrap;
@@ -103,6 +103,10 @@
     &-left {
       text-align: left;
     }
+  }
+
+  &-control-wrapper {
+    flex: 1 1 0;
   }
 
   .@{ant-prefix}-switch {
