@@ -258,7 +258,7 @@ export default class Form extends React.Component<FormProps, any> {
     warning(
       false,
       'Form',
-      'If missing `Grid` style, you should import `Grid` style.',
+      'If missing `Grid` style, you should import it, Please follow https://github.com/ant-design/compatible#faq.',
     );
 
     upgradeMessage('Form');
