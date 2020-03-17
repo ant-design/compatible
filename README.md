@@ -15,19 +15,21 @@ yarn add @ant-design/compatible
 Helps you to compatible different components between v3 and v4.
 
 Follow Component are provided compatible version:
-* Form
-* Icon
-* Mention
+
+- Form
+- Icon
+- Mention
 
 ```jsx
 import { Form } from '@ant-design/compatible';
 
-import '@ant-design/compatible/assets/index.css' // If you need
+import '@ant-design/compatible/assets/index.css'; // If you need
 ```
 
 ## Introduction
 
 ### Form
+
 Form of v3 api is different with v4:
 
 ```jsx
@@ -36,12 +38,10 @@ import { Form, Input, Button } from 'antd';
 
 class MyForm extends React.Component {
   render() {
-    const { form } = this.props
+    const { form } = this.props;
     return (
       <Form>
-        {form.getFieldDecorator('username')(
-          <Input />,
-        )}
+        {form.getFieldDecorator('username')(<Input />)}
         <Button>Submit</Button>
       </Form>
     );
@@ -61,12 +61,10 @@ import '@ant-design/compatible/assets/index.css';
 
 class MyForm extends React.Component {
   render() {
-    const { form } = this.props
+    const { form } = this.props;
     return (
       <LegacyForm>
-        {form.getFieldDecorator('username')(
-          <Input />,
-        )}
+        {form.getFieldDecorator('username')(<Input />)}
         <Button>Submit</Button>
       </LegacyForm>
     );
@@ -77,6 +75,7 @@ export default Form.create()(MyForm);
 ```
 
 ### Icon
+
 Just import `Icon` from package `@ant-design/compatible` and the reset is almost same as before.
 
 ```jsx
@@ -140,7 +139,14 @@ ReactDOM.render(
   <Mention
     style={{ width: '100%' }}
     onChange={onChange}
-    defaultSuggestions={['afc163', 'benjycui', 'yiminghe', 'RaoHai', '中文', 'にほんご']}
+    defaultSuggestions={[
+      'afc163',
+      'benjycui',
+      'yiminghe',
+      'RaoHai',
+      '中文',
+      'にほんご',
+    ]}
     onSelect={onSelect}
     placement="top"
   />,
@@ -160,10 +166,28 @@ ReactDOM.render(
   <Mention
     style={{ width: '100%' }}
     onChange={onChange}
-    defaultSuggestions={['afc163', 'benjycui', 'yiminghe', 'RaoHai', '中文', 'にほんご']}
+    defaultSuggestions={[
+      'afc163',
+      'benjycui',
+      'yiminghe',
+      'RaoHai',
+      '中文',
+      'にほんご',
+    ]}
     onSelect={onSelect}
     placement="top"
   />,
   mountNode,
 );
+```
+
+## FAQ
+
+### Missing `Grid` style when use `Form`.
+
+You should import `Grid` style by youself.
+
+```js
+import 'antd/es/grid/style/css'; // By CSS
+// import 'antd/es/grid/style';         // By LESS
 ```

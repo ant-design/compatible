@@ -255,6 +255,12 @@ export default class Form extends React.Component<FormProps, any> {
       'It is unnecessary to pass `form` to `Form` after antd@1.7.0.',
     );
 
+    warning(
+      false,
+      'Form',
+      'If missing `Grid` style, you should import `Grid` style.',
+    );
+
     upgradeMessage('Form');
   }
 
