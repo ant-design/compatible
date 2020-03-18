@@ -28,7 +28,9 @@
     "compile": "father build && npm run compile:style",
     "compile:style": "lessc --js assets/index.less assets/index.css",
     "test": "father test",
-    "prepublishOnly": "npm run lint && npm run test && npm run compile && np --no-cleanup --yolo --no-publish"
+    "prepublishOnly": "npm run lint && npm run test && npm run compile && np --no-cleanup --yolo --no-publish",
+    "build": "npm run compile:style && father doc build --storybook",
+    "now-build": "npm run build"
   },
   "license": "MIT",
   "dependencies": {
