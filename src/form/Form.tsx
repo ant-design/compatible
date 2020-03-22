@@ -255,13 +255,22 @@ export default class Form extends React.Component<FormProps, any> {
       'It is unnecessary to pass `form` to `Form` after antd@1.7.0.',
     );
 
-    warning(
-      false,
-      'Form',
-      'If missing `Grid` style, you should import it, Please follow https://github.com/ant-design/compatible#faq.',
-    );
-
     upgradeMessage('Form');
+  }
+
+  componentDidMount() {
+    try {
+      warning(
+        getComputedStyle(
+          document.querySelector('.ant-col'),
+          null,
+        ).getPropertyValue('position') === 'relative',
+        'Form',
+        'If missing `Grid` style, you should import it, Please follow https://github.com/ant-design/compatible#faq.',
+      );
+    } catch (error) {
+      warning(false, 'Form', error);
+    }
   }
 
   renderForm = ({ getPrefixCls }: ConfigConsumerProps) => {
