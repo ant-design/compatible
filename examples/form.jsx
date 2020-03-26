@@ -255,7 +255,7 @@ class HorizontalLoginForm extends React.Component {
   }
 }
 
-const WrappedHorizontalLoginForm = Form.create({ name: 'horizontal_login' })(
+const WrappedHorizontalLoginForm = Form.create({ name: 'horizontalLogin' })(
   HorizontalLoginForm,
 );
 
