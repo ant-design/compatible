@@ -2,7 +2,6 @@ import React from 'react';
 import { Row, Col, Input, Select } from 'antd';
 import { Form } from '../src';
 import 'antd/dist/antd.css';
-import 'antd/es/grid/style/css';
 import '../assets/index.css';
 
 const { Option } = Select;
@@ -45,7 +44,7 @@ class FormVertical extends React.Component {
             </Col>
             <Col {...LAYOUT.COL}>
               <Form.Item label="input2">
-                {getFieldDecorator('input')(<Input placeholder="请输入" />)}
+                {getFieldDecorator('input2')(<Input placeholder="请输入" />)}
               </Form.Item>
             </Col>
           </Row>
