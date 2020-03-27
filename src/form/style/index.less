@@ -292,6 +292,9 @@ form {
     display: none;
   }
 }
+.make-vertical-layout-control-wrapper() {
+  flex-basis: 100%;
+}
 
 .make-vertical-layout() {
   .@{form-prefix-cls}-item-label,
@@ -301,6 +304,9 @@ form {
   }
   .@{form-prefix-cls}-item-label {
     .make-vertical-layout-label();
+  }
+  .@{form-prefix-cls}-item-control-wrapper {
+    .make-vertical-layout-control-wrapper();
   }
 }
 
