@@ -93,7 +93,7 @@ class FormVertical extends React.Component {
           }}
         >
           <Form layout="inline" onSubmit={this.onSubmit}>
-            <Form.Item>
+            <Form.Item hasFeedback validateStatus="warning">
               {getFieldDecorator('username', {
                 rules: [
                   { required: true, message: 'Please input your username!' },

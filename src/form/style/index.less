@@ -501,6 +501,15 @@ form {
   // input
   .@{ant-prefix}-input-affix-wrapper {
     border-color: @warning-color;
+    &-focused {
+      box-shadow: @input-outline-offset @outline-blur-size @outline-width
+        fade(@warning-color, @outline-fade);
+    }
+    .@{ant-prefix}-input {
+      &:focus {
+        box-shadow: none;
+      }
+    }
   }
 }
 
@@ -605,6 +614,15 @@ form {
   // input
   .@{ant-prefix}-input-affix-wrapper {
     border-color: @error-color;
+    &-focused {
+      box-shadow: @input-outline-offset @outline-blur-size @outline-width
+        fade(@error-color, @outline-fade);
+    }
+    .@{ant-prefix}-input {
+      &:focus {
+        box-shadow: none;
+      }
+    }
   }
 }
 
