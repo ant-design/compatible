@@ -17,6 +17,8 @@
 // https://github.com/ant-design/ant-design/issues/8220
 @form-explain-precision: 1px;
 @form-explain-height: floor(@form-explain-font-size * @line-height-base);
+@input-affix-width: 19px;
+@outline-fade: 20%;
 
 .@{form-prefix-cls} {
   .reset-component;
@@ -99,10 +101,15 @@
     white-space: nowrap;
     text-align: right;
     vertical-align: middle;
+    flex-grow: 0;
 
     &-left {
       text-align: left;
     }
+  }
+
+  &-control-wrapper {
+    flex: 1 1 0;
   }
 
   .@{ant-prefix}-switch {
@@ -202,6 +209,12 @@ form {
       &-icon,
       &-clear {
         right: (@form-component-height / 2) + @form-feedback-icon-size - 2px;
+      }
+    }
+
+    .@{ant-prefix}-picker {
+      .@{ant-prefix}-picker-suffix {
+        padding-right: @input-affix-width - 2px;
       }
     }
   }
@@ -484,6 +497,20 @@ form {
       border-color: @warning-color;
     }
   }
+
+  // input
+  .@{ant-prefix}-input-affix-wrapper {
+    border-color: @warning-color;
+    &-focused {
+      box-shadow: @input-outline-offset @outline-blur-size @outline-width
+        fade(@warning-color, @outline-fade);
+    }
+    .@{ant-prefix}-input {
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
 }
 
 .has-error {
@@ -580,6 +607,20 @@ form {
         &:focus {
           .active();
         }
+      }
+    }
+  }
+
+  // input
+  .@{ant-prefix}-input-affix-wrapper {
+    border-color: @error-color;
+    &-focused {
+      box-shadow: @input-outline-offset @outline-blur-size @outline-width
+        fade(@error-color, @outline-fade);
+    }
+    .@{ant-prefix}-input {
+      &:focus {
+        box-shadow: none;
       }
     }
   }
