@@ -8,6 +8,8 @@ import { getThemeFromTypeName, withThemeSuffix } from '../../src/icon/utils';
 
 import { mountTest } from '../utils';
 
+const sleep = (timeout = 0) => new Promise(resolve => setTimeout(resolve, timeout));
+
 describe('Icon', () => {
   mountTest(Icon);
 
@@ -72,13 +74,14 @@ describe('Icon', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should support wrapped by Tooltip', () => {
+  fit('should support wrapped by Tooltip', async () => {
     const onVisibleChange = jest.fn();
     const wrapper = mount(
       <Tooltip
         title="xxxxx"
         mouseEnterDelay={0}
         mouseLeaveDelay={0}
+        transitionName=""
         onVisibleChange={onVisibleChange}
       >
         <Icon type="home" />
@@ -89,11 +92,13 @@ describe('Icon', () => {
     const icon = wrapper.find('span').at(0);
     icon.simulate('mouseenter');
     expect(onVisibleChange).toHaveBeenCalledWith(true);
-    expect((wrapper.instance() as any).tooltip.props.visible).toBe(true);
+    await sleep(0);
+    expect(wrapper.find('.ant-tooltip').at(1).hasClass('ant-tooltip-hidden')).toBe(false);
 
     icon.simulate('mouseleave');
     expect(onVisibleChange).toHaveBeenCalledWith(false);
-    expect((wrapper.instance() as any).tooltip.props.visible).toBe(false);
+    await sleep(0);
+    expect(wrapper.find('.ant-tooltip').at(1).hasClass('ant-tooltip-hidden')).toBe(true);
   });
 
   it('should support custom usage of children', () => {
