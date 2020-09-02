@@ -43,7 +43,7 @@
     "rc-animate": "^2.10.2",
     "rc-editor-mention": "^1.1.13",
     "rc-form": "^2.4.10",
-    "rc-util": "^4.10.0"
+    "rc-util": "^5.2.1"
   },
   "peerDependencies": {
     "antd": ">=3.0.0",
