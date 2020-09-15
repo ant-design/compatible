@@ -3,7 +3,8 @@ import classNames from 'classnames';
 import createDOMForm from 'rc-form/lib/createDOMForm';
 import createFormField from 'rc-form/lib/createFormField';
 import omit from 'omit.js';
-import { ConfigConsumer, ConfigConsumerProps } from 'antd/lib/config-provider';
+import { ConfigProvider } from 'antd';
+import { ConfigConsumerProps } from 'antd/lib/config-provider';
 import { ColProps } from 'antd/lib/grid/col';
 import { tuple } from '../_util/types';
 import warning from '../_util/warning';
@@ -319,7 +320,9 @@ export default class Form extends React.Component<FormProps, any> {
           colon,
         }}
       >
-        <ConfigConsumer>{this.renderForm}</ConfigConsumer>
+        <ConfigProvider.ConfigContext.Consumer>
+          {this.renderForm}
+        </ConfigProvider.ConfigContext.Consumer>
       </FormContext.Provider>
     );
   }

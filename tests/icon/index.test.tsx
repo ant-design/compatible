@@ -8,7 +8,8 @@ import { getThemeFromTypeName, withThemeSuffix } from '../../src/icon/utils';
 
 import { mountTest } from '../utils';
 
-const sleep = (timeout = 0) => new Promise(resolve => setTimeout(resolve, timeout));
+const sleep = (timeout = 0) =>
+  new Promise(resolve => setTimeout(resolve, timeout));
 
 describe('Icon', () => {
   mountTest(Icon);
@@ -93,12 +94,22 @@ describe('Icon', () => {
     icon.simulate('mouseenter');
     expect(onVisibleChange).toHaveBeenCalledWith(true);
     await sleep(0);
-    expect(wrapper.find('.ant-tooltip').at(1).hasClass('ant-tooltip-hidden')).toBe(false);
+    expect(
+      wrapper
+        .find('.ant-tooltip')
+        .at(0)
+        .hasClass('ant-tooltip-hidden'),
+    ).toBe(false);
 
     icon.simulate('mouseleave');
     expect(onVisibleChange).toHaveBeenCalledWith(false);
     await sleep(0);
-    expect(wrapper.find('.ant-tooltip').at(1).hasClass('ant-tooltip-hidden')).toBe(true);
+    expect(
+      wrapper
+        .find('.ant-tooltip')
+        .at(0)
+        .hasClass('ant-tooltip-hidden'),
+    ).toBe(true);
   });
 
   it('should support custom usage of children', () => {

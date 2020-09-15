@@ -3,9 +3,9 @@ import * as ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import Animate from 'rc-animate';
 import omit from 'omit.js';
-import Row from 'antd/lib/grid/row';
-import Col, { ColProps } from 'antd/lib/grid/col';
-import { ConfigConsumer, ConfigConsumerProps } from 'antd/lib/config-provider';
+import { Row, Col, ConfigProvider } from 'antd';
+import { ColProps } from 'antd/lib/grid/col';
+import { ConfigConsumerProps } from 'antd/lib/config-provider';
 import warning from '../_util/warning';
 import { tuple } from '../_util/types';
 import { FIELD_META_PROP, FIELD_DATA_PROP } from './constants';
@@ -277,9 +277,7 @@ export default class FormItem extends React.Component<FormItemProps, any> {
 
     const icon =
       props.hasFeedback && iconType ? (
-        <span className={`${prefixCls}-item-children-icon`}>
-          {iconType}
-        </span>
+        <span className={`${prefixCls}-item-children-icon`}>{iconType}</span>
       ) : null;
 
     return (
@@ -445,6 +443,10 @@ export default class FormItem extends React.Component<FormItemProps, any> {
   };
 
   render() {
-    return <ConfigConsumer>{this.renderFormItem}</ConfigConsumer>;
+    return (
+      <ConfigProvider.ConfigContext.Consumer>
+        {this.renderFormItem}
+      </ConfigProvider.ConfigContext.Consumer>
+    );
   }
 }
