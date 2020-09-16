@@ -6,7 +6,8 @@ import RcMention, {
   getMentions,
 } from 'rc-editor-mention';
 import classNames from 'classnames';
-import { ConfigConsumer, ConfigConsumerProps } from 'antd/lib/config-provider';
+import { ConfigProvider } from 'antd';
+import { ConfigConsumerProps } from 'antd/lib/config-provider';
 import Icon from '../icon';
 import upgradeMessage from '../_util/upgradeMessage';
 
@@ -169,7 +170,11 @@ class Mention extends React.Component<MentionProps, MentionState> {
   };
 
   render() {
-    return <ConfigConsumer>{this.renderMention}</ConfigConsumer>;
+    return (
+      <ConfigProvider.ConfigContext.Consumer>
+        {this.renderMention}
+      </ConfigProvider.ConfigContext.Consumer>
+    );
   }
 }
 
