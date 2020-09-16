@@ -443,10 +443,6 @@ export default class FormItem extends React.Component<FormItemProps, any> {
   };
 
   render() {
-    return (
-      <CompatibleConsumer>
-        {this.renderFormItem}
-      </CompatibleConsumer>
-    );
+    return <CompatibleConsumer>{this.renderFormItem}</CompatibleConsumer>;
   }
 }

@@ -169,11 +169,7 @@ class Mention extends React.Component<MentionProps, MentionState> {
   };
 
   render() {
-    return (
-      <CompatibleConsumer>
-        {this.renderMention}
-      </CompatibleConsumer>
-    );
+    return <CompatibleConsumer>{this.renderMention}</CompatibleConsumer>;
   }
 }
 
