@@ -3,8 +3,6 @@ import classNames from 'classnames';
 import createDOMForm from 'rc-form/lib/createDOMForm';
 import createFormField from 'rc-form/lib/createFormField';
 import omit from 'omit.js';
-import { ConfigProvider } from 'antd';
-import { ConfigConsumerProps } from 'antd/lib/config-provider';
 import { ColProps } from 'antd/lib/grid/col';
 import { tuple } from '../_util/types';
 import warning from '../_util/warning';
@@ -13,6 +11,7 @@ import { FIELD_META_PROP, FIELD_DATA_PROP } from './constants';
 import FormContext from './context';
 import { FormWrappedProps } from './interface';
 import upgradeMessage from '../_util/upgradeMessage';
+import CompatibleConsumer, { ConfigConsumerProps } from '../CompatibleConsumer';
 
 type FormCreateOptionMessagesCallback = (...args: any[]) => string;
 
@@ -320,9 +319,7 @@ export default class Form extends React.Component<FormProps, any> {
           colon,
         }}
       >
-        <ConfigProvider.ConfigContext.Consumer>
-          {this.renderForm}
-        </ConfigProvider.ConfigContext.Consumer>
+        <CompatibleConsumer>{this.renderForm}</CompatibleConsumer>
       </FormContext.Provider>
     );
   }

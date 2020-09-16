@@ -6,19 +6,18 @@ import RcMention, {
   getMentions,
 } from 'rc-editor-mention';
 import classNames from 'classnames';
-import { ConfigProvider } from 'antd';
-import { ConfigConsumerProps } from 'antd/lib/config-provider';
 import Icon from '../icon';
 import upgradeMessage from '../_util/upgradeMessage';
+import CompatibleConsumer, { ConfigConsumerProps } from '../CompatibleConsumer';
 
 export type MentionPlacement = 'top' | 'bottom';
 
-type SuggestionItme = React.ReactElement<{ value?: string }> | string;
+type SuggestionItem = React.ReactElement<{ value?: string }> | string;
 
 export interface MentionProps {
   prefixCls?: string;
   suggestionStyle?: React.CSSProperties;
-  defaultSuggestions?: Array<SuggestionItme>;
+  defaultSuggestions?: Array<SuggestionItem>;
   suggestions?: Array<React.ReactElement<any>>;
   onSearchChange?: (value: string, trigger: string) => any;
   onChange?: (contentState: any) => void;
@@ -171,9 +170,9 @@ class Mention extends React.Component<MentionProps, MentionState> {
 
   render() {
     return (
-      <ConfigProvider.ConfigContext.Consumer>
+      <CompatibleConsumer>
         {this.renderMention}
-      </ConfigProvider.ConfigContext.Consumer>
+      </CompatibleConsumer>
     );
   }
 }

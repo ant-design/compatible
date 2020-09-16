@@ -3,19 +3,19 @@ import * as ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import Animate from 'rc-animate';
 import omit from 'omit.js';
-import { Row, Col, ConfigProvider } from 'antd';
-import { ColProps } from 'antd/lib/grid/col';
-import { ConfigConsumerProps } from 'antd/lib/config-provider';
-import warning from '../_util/warning';
-import { tuple } from '../_util/types';
-import { FIELD_META_PROP, FIELD_DATA_PROP } from './constants';
-import FormContext, { FormContextProps } from './context';
+import { Row, Col } from 'antd';
 import {
   CheckCircleFilled,
   CloseCircleFilled,
   ExclamationCircleFilled,
   LoadingOutlined,
 } from '@ant-design/icons';
+import { ColProps } from 'antd/lib/grid/col';
+import CompatibleConsumer, { ConfigConsumerProps } from '../CompatibleConsumer';
+import warning from '../_util/warning';
+import { tuple } from '../_util/types';
+import { FIELD_META_PROP, FIELD_DATA_PROP } from './constants';
+import FormContext, { FormContextProps } from './context';
 
 const ValidateStatuses = tuple('success', 'warning', 'error', 'validating', '');
 
@@ -444,9 +444,9 @@ export default class FormItem extends React.Component<FormItemProps, any> {
 
   render() {
     return (
-      <ConfigProvider.ConfigContext.Consumer>
+      <CompatibleConsumer>
         {this.renderFormItem}
-      </ConfigProvider.ConfigContext.Consumer>
+      </CompatibleConsumer>
     );
   }
 }
