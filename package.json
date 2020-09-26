@@ -40,7 +40,7 @@
     "lodash.camelcase": "^4.3.0",
     "lodash.upperfirst": "^4.3.1",
     "omit.js": "^1.0.2",
-    "rc-animate": "^2.10.2",
+    "rc-animate": "^3.1.1",
     "rc-editor-mention": "^1.1.13",
     "rc-form": "^2.4.10",
     "rc-util": "^4.10.0"
