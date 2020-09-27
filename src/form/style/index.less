@@ -533,6 +533,29 @@ form {
     &-focused .@{ant-prefix}-select-selection {
       .active(@error-color);
     }
+
+    &-open .@{ant-prefix}-select-selection,
+    &-focused .@{ant-prefix}-select-selection {
+      .active(@error-color);
+    }
+
+    // AntD3 Form 校验，AntD4 Select error 样式
+    &-selector {
+      border-color: @error-color;
+      &:hover {
+        border-color: @error-color;
+      }
+    }
+
+    &-open .@{ant-prefix}-select-selector,
+    &-focused .@{ant-prefix}-select-selector {
+      .active(@error-color);
+    }
+
+    &-open .@{ant-prefix}-select-selector,
+    &-focused .@{ant-prefix}-select-selector {
+      .active(@error-color);
+    }
   }
 
   .@{ant-prefix}-select.@{ant-prefix}-select-auto-complete {
