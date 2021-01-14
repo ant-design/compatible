@@ -228,9 +228,9 @@ class TimePicker extends React.Component<TimePickerProps, any> {
         });
 
         const pickerAddon = (panel: React.ReactElement<any>) =>
-          (addon ? (
+          addon ? (
             <div className={`${prefixCls}-panel-addon`}>{addon(panel)}</div>
-          ) : null);
+          ) : null;
 
         return (
           <RcTimePicker

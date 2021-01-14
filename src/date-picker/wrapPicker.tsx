@@ -13,9 +13,7 @@ import upgradeMessage from '../_util/upgradeMessage';
 
 type PickerType = 'date' | 'week' | 'month';
 
-interface PickerMap {
-  [name: string]: string;
-}
+type PickerMap = Record<string, string>;
 
 const DEFAULT_FORMAT: PickerMap = {
   date: 'YYYY-MM-DD',

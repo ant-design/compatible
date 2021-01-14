@@ -59,6 +59,7 @@
     "@types/jest": "^25.2.2",
     "@types/lodash": "^4.14.137",
     "@types/react": "^16.9.2",
+    "@umijs/fabric": "^2.4.11",
     "antd": "^4.0.4",
     "cross-env": "^5.2.0",
     "enzyme": "^3.10.0",
@@ -67,6 +68,6 @@
     "father": "^2.14.0",
     "less": "^3.10.3",
     "np": "^5.0.3",
-    "typescript": "^3.3.3"
+    "typescript": "^4.1.3"
   }
 }

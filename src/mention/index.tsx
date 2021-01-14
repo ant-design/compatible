@@ -17,8 +17,8 @@ type SuggestionItem = React.ReactElement<{ value?: string }> | string;
 export interface MentionProps {
   prefixCls?: string;
   suggestionStyle?: React.CSSProperties;
-  defaultSuggestions?: Array<SuggestionItem>;
-  suggestions?: Array<React.ReactElement<any>>;
+  defaultSuggestions?: SuggestionItem[];
+  suggestions?: React.ReactElement<any>[];
   onSearchChange?: (value: string, trigger: string) => any;
   onChange?: (contentState: any) => void;
   notFoundContent?: any;
@@ -40,7 +40,7 @@ export interface MentionProps {
 }
 
 export interface MentionState {
-  filteredSuggestions?: Array<any>;
+  filteredSuggestions?: any[];
   focus?: Boolean;
 }
 

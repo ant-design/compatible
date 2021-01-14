@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 /* tslint:disable jsx-no-multiline-js */
 import * as React from 'react';
 import * as moment from 'moment';
@@ -57,7 +58,7 @@ function pickerValueAdapter(
 
 function isEmptyArray(arr: any) {
   if (Array.isArray(arr)) {
-    return arr.length === 0 || arr.every((i) => !i);
+    return arr.length === 0 || arr.every(i => !i);
   }
   return false;
 }
@@ -179,6 +180,7 @@ class RangePicker extends React.Component<RangePickerProps, RangePickerState> {
       }));
     }
     if (value[0] && value[1] && value[0].diff(value[1]) > 0) {
+      // eslint-disable-next-line no-param-reassign
       value[1] = undefined;
     }
     const [start, end] = value;
@@ -229,6 +231,7 @@ class RangePicker extends React.Component<RangePickerProps, RangePickerState> {
 
   handleRangeClick = (value: RangePickerPresetRange) => {
     if (typeof value === 'function') {
+      // eslint-disable-next-line no-param-reassign
       value = value();
     }
 
@@ -265,7 +268,7 @@ class RangePicker extends React.Component<RangePickerProps, RangePickerState> {
     ) : null;
     const operations =
       ranges &&
-      Object.keys(ranges).map((range) => {
+      Object.keys(ranges).map(range => {
         const value = ranges[range];
         const hoverValue =
           typeof value === 'function' ? value.call(this) : value;
@@ -348,7 +351,7 @@ class RangePicker extends React.Component<RangePickerProps, RangePickerState> {
       onOk: this.handleChange,
     };
     if (props.timePicker) {
-      pickerChangeHandler.onChange = (changedValue) =>
+      pickerChangeHandler.onChange = changedValue =>
         this.handleChange(changedValue);
     } else {
       calendarProps = {};

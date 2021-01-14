@@ -9,6 +9,7 @@ export function formatDate(
     return '';
   }
   if (Array.isArray(format)) {
+    // eslint-disable-next-line prefer-destructuring,no-param-reassign
     format = format[0];
   }
   return value.format(format);
