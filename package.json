@@ -39,11 +39,16 @@
     "classnames": "^2.2.6",
     "lodash.camelcase": "^4.3.0",
     "lodash.upperfirst": "^4.3.1",
+    "moment": "^2.29.1",
     "omit.js": "^1.0.2",
     "rc-animate": "^2.10.2",
+    "rc-calendar": "^9.15.11",
     "rc-editor-mention": "^1.1.13",
     "rc-form": "^2.4.10",
-    "rc-util": "^4.10.0"
+    "rc-time-picker": "^3.7.3",
+    "rc-util": "^4.10.0",
+    "react-lifecycles-compat": "^3.0.4",
+    "shallowequal": "^1.1.0"
   },
   "peerDependencies": {
     "antd": ">=3.0.0",
