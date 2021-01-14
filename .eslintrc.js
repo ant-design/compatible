@@ -13,5 +13,7 @@ module.exports = {
     'jsx-a11y/label-has-for': 0,
     'react/sort-comp': 0,
     'react/prefer-stateless-function': 0,
+    '@typescript-eslint/consistent-type-imports': 0,
+    '@typescript-eslint/consistent-type-definitions': 0,
   },
 };

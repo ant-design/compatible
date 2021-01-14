@@ -39,11 +39,16 @@
     "classnames": "^2.2.6",
     "lodash.camelcase": "^4.3.0",
     "lodash.upperfirst": "^4.3.1",
+    "moment": "^2.29.1",
     "omit.js": "^1.0.2",
     "rc-animate": "^2.10.2",
+    "rc-calendar": "^9.15.11",
     "rc-editor-mention": "^1.1.13",
     "rc-form": "^2.4.10",
-    "rc-util": "^4.10.0"
+    "rc-time-picker": "^3.7.3",
+    "rc-util": "^4.10.0",
+    "react-lifecycles-compat": "^3.0.4",
+    "shallowequal": "^1.1.0"
   },
   "peerDependencies": {
     "antd": ">=3.0.0",
@@ -54,6 +59,7 @@
     "@types/jest": "^25.2.2",
     "@types/lodash": "^4.14.137",
     "@types/react": "^16.9.2",
+    "@umijs/fabric": "^2.4.11",
     "antd": "^4.0.4",
     "cross-env": "^5.2.0",
     "enzyme": "^3.10.0",
@@ -62,6 +68,6 @@
     "father": "^2.14.0",
     "less": "^3.10.3",
     "np": "^5.0.3",
-    "typescript": "^3.3.3"
+    "typescript": "^4.1.3"
   }
 }
