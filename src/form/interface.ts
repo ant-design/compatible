@@ -50,9 +50,7 @@ interface FORWARD_REF_STATICS {
 
 type NonReactStatics<
   S extends React.ComponentType<any>,
-  C extends {
-    [key: string]: true;
-  } = {}
+  C extends Record<string, true> = {}
 > = {
   [key in Exclude<
     keyof S,
