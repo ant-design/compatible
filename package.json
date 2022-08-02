@@ -24,44 +24,47 @@
     "registry": "https://registry.npmjs.org"
   },
   "scripts": {
-    "start": "npm run compile:style && cross-env NODE_ENV=development father doc dev --storybook",
+    "start": "dumi dev",
+    "docs:build": "dumi build",
+    "docs:deploy": "gh-pages -d docs-dist",
+    "compile": "father build",
+    "deploy": "npm run docs:build && npm run docs:deploy",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage",
+    "prepublishOnly": "npm run compile && np --no-cleanup --yolo --no-publish",
     "lint": "eslint src/ --ext .tsx,.ts",
-    "compile": "father build && npm run compile:style",
-    "compile:style": "lessc --js assets/index.less assets/index.css",
-    "test": "father test",
-    "prepublishOnly": "npm run lint && npm run test && npm run compile && np --yolo --no-publish",
-    "build": "npm run compile:style && father doc build --storybook",
-    "now-build": "npm run build"
+    "lint:tsc": "tsc -p tsconfig.json --noEmit",
+    "now-build": "npm run docs:build",
+    "watch": "father dev"
   },
   "license": "MIT",
   "dependencies": {
-    "@ant-design/icons": "^4.0.0",
-    "classnames": "^2.2.6",
-    "lodash.camelcase": "^4.3.0",
-    "lodash.upperfirst": "^4.3.1",
-    "omit.js": "^1.0.2",
-    "rc-animate": "^2.10.2",
-    "rc-editor-mention": "^1.1.13",
-    "rc-form": "^2.4.10",
-    "rc-util": "^4.10.0"
+    "classnames": "^2.2.6"
   },
   "peerDependencies": {
-    "antd": "3.x",
+    "antd": "4.x",
     "react": ">=16.0.0",
     "react-dom": ">=16.0.0"
   },
   "devDependencies": {
-    "@types/jest": "^25.2.2",
-    "@types/lodash": "^4.14.137",
-    "@types/react": "^16.9.2",
-    "antd": "^4.0.4",
-    "cross-env": "^5.2.0",
-    "enzyme": "^3.10.0",
-    "enzyme-to-json": "^3.4.0",
-    "eslint": "^7.3.1",
-    "father": "^2.14.0",
-    "less": "^3.10.3",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.0.0",
+    "@types/enzyme": "^3.10.5",
+    "@types/jest": "^26.0.20",
+    "@types/lodash": "^4.14.135",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@umijs/fabric": "^2.5.2",
+    "dumi": "^1.1.0",
+    "eslint": "^7.18.0",
+    "father": "^4.0.0-rc.8",
+    "gh-pages": "^3.1.0",
     "np": "^5.0.3",
-    "typescript": "^3.3.3"
+    "prettier": "^2.1.2",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "typescript": "^4.6.3",
+    "umi-test": "^1.9.7"
   }
 }
