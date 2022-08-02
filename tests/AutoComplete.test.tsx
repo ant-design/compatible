@@ -4,8 +4,15 @@ import { render } from '@testing-library/react';
 
 describe('AutoComplete', () => {
   it('dropdownClassName', async () => {
-    const { container } = render(<AutoComplete open dropdownClassName="test" />);
+    const { container } = render(
+      <AutoComplete
+        open
+        dropdownClassName="test"
+        value="bam"
+        options={[{ label: 'bamboo', value: 'bamboo' }]}
+      />,
+    );
 
-    console.log(container.innerHTML);
+    expect(container.querySelector('.test')).toBeTruthy();
   });
 });
