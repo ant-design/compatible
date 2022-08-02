@@ -8,6 +8,7 @@ export default defineConfig({
   outputPath: '.doc',
   exportStatic: {},
   styles: [
+    // Remove when antd fix this
     `
       .markdown table {
         width: auto !important;
