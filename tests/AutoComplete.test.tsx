@@ -4,6 +4,8 @@ import { render } from '@testing-library/react';
 
 describe('AutoComplete', () => {
   it('dropdownClassName', async () => {
+    const errSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+
     const { container } = render(
       <AutoComplete
         open
@@ -13,6 +15,11 @@ describe('AutoComplete', () => {
       />,
     );
 
+    expect(errSpy).toHaveBeenCalledWith(
+      "Warning: [Compatible: AutoComplete] 'dropdownClassName' is deprecated. Please use 'popupClassName' instead.",
+    );
     expect(container.querySelector('.test')).toBeTruthy();
+
+    errSpy.mockRestore();
   });
 });
