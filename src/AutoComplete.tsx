@@ -17,7 +17,7 @@ const CompatibleAutoComplete = React.forwardRef(
   ) => {
     warning(
       !dropdownClassName,
-      `[Compatible: AutoComplete] 'dropdownClassName' is deprecated. Please use 'popupClassName' instead.`,
+      "[antd: AutoComplete] `dropdownClassName` is removed in v5, please use `popupClassName` instead.",
     );
 
     return (

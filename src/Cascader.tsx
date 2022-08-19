@@ -17,9 +17,8 @@ const CompatibleCascader = React.forwardRef(
   ) => {
     warning(
       !dropdownClassName,
-      `[Compatible: Cascader] 'dropdownClassName' is deprecated. Please use 'popupClassName' instead.`,
+      "[antd: Cascader] `dropdownClassName` is removed in v5, please use `popupClassName` instead.",
     );
-
     return (
       <Cascader {...restProps} popupClassName={popupClassName || dropdownClassName} ref={ref} />
     );
