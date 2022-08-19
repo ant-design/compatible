@@ -17,7 +17,7 @@ const CompatibleMentions = React.forwardRef(
   ) => {
     warning(
       !dropdownClassName,
-      `[Compatible: Mentions] 'dropdownClassName' is deprecated. Please use 'popupClassName' instead.`,
+      "[antd: Mentions] `dropdownClassName` is removed in v5, please use `popupClassName` instead.",
     );
 
     return (

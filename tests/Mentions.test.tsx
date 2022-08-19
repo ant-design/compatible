@@ -13,9 +13,8 @@ describe('Mentions', () => {
     );
 
     expect(errSpy).toHaveBeenCalledWith(
-      "Warning: [Compatible: Mentions] 'dropdownClassName' is deprecated. Please use 'popupClassName' instead.",
+      "Warning: [antd: Mentions] `dropdownClassName` is removed in v5, please use `popupClassName` instead.",
     );
-
     // TODO: Remove this when antd release version
     // expect(container.querySelector('.test')).toBeTruthy();
 
