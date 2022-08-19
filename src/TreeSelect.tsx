@@ -17,7 +17,7 @@ const CompatibleTreeSelect = React.forwardRef(
   ) => {
     warning(
       !dropdownClassName,
-      `[Compatible: TreeSelect] 'dropdownClassName' is deprecated. Please use 'popupClassName' instead.`,
+      "[antd: TreeSelect] `dropdownClassName` is removed in v5, please use `popupClassName` instead.",
     );
 
     return (
