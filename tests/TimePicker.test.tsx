@@ -14,8 +14,8 @@ describe('TimePicker', () => {
       />,
     );
 
-    expect(errSpy).toHaveBeenNthCalledWith(1,
-      "Warning: [antd: TimePicker] `dropdownClassName` is deprecated which will be removed in next major version. Please use `popupClassName` instead."
+    expect(errSpy).toHaveBeenCalledWith(
+      "Warning: [antd: TimePicker] `dropdownClassName` is removed in v5, please use `popupClassName` instead.",
     );
 
     // TODO: Remove this when antd release version
@@ -33,8 +33,8 @@ describe('TimePicker', () => {
       />,
     );
 
-    expect(errSpy).toHaveBeenNthCalledWith(1,
-      "Warning: [antd: RangePicker] `dropdownClassName` is deprecated which will be removed in next major version. Please use `popupClassName` instead."
+    expect(errSpy).toHaveBeenCalledWith(
+      "Warning: [antd: RangePicker] `dropdownClassName` is removed in v5, please use `popupClassName` instead.",
     );
 
     // TODO: Remove this when antd release version

@@ -5,3 +5,4 @@ export { default as Mentions } from './Mentions';
 export { default as Select } from './Select';
 export { default as TreeSelect } from './TreeSelect';
 export { default as DatePicker } from './DatePicker';
+export { default as TimePicker } from './TimePicker';

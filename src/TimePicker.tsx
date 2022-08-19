@@ -5,7 +5,15 @@ import warning from 'rc-util/lib/warning';
 type TimePickerProps = Parameters<typeof TimePicker>[0];
 type TimePickerRef = TimePickerProps['ref'];
 
+type RangePickerProps = Parameters<typeof TimePicker>[0];
+type RangePickerRef = RangePickerProps['ref'];
+
 type CompatibleTimePickerProps = TimePickerProps & {
+  /** @deprecated Please use `popupClassName` instead. */
+  dropdownClassName?: string;
+};
+
+type CompatibleRangePickerProps = RangePickerProps & {
   /** @deprecated Please use `popupClassName` instead. */
   dropdownClassName?: string;
 };
@@ -17,7 +25,7 @@ const CompatibleTimePicker = React.forwardRef(
   ) => {
     warning(
       !dropdownClassName,
-      `[Compatible: TimePicker] 'dropdownClassName' is deprecated. Please use 'popupClassName' instead.`,
+      "[antd: TimePicker] `dropdownClassName` is removed in v5, please use `popupClassName` instead.",
     );
 
     return (
@@ -29,5 +37,21 @@ const CompatibleTimePicker = React.forwardRef(
 if (process.env.NODE_ENV !== 'production') {
   CompatibleTimePicker.displayName = 'CompatibleTimePicker';
 }
+
+CompatibleTimePicker.RangePicker = React.forwardRef(
+  (
+    { dropdownClassName, popupClassName, ...restProps }: CompatibleRangePickerProps,
+    ref: RangePickerRef,
+  ) => {
+    warning(
+      !dropdownClassName,
+      "[antd: TimePicker] `dropdownClassName` is removed in v5, please use `popupClassName` instead.",
+    );
+
+    return (
+      <TimePicker.RangePicker {...restProps} popupClassName={popupClassName || dropdownClassName} ref={ref} />
+    );
+  },
+);
 
 export default CompatibleTimePicker;
