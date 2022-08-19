@@ -46,7 +46,7 @@ describe('Cascader', () => {
       <Cascader options={options} dropdownClassName="test" />
     );
 
-    expect(errSpy).toHaveBeenNthCalledWith(1,
+    expect(errSpy).toHaveBeenCalledWith(
       "Warning: [antd: Cascader] `dropdownClassName` is removed in v5, please use `popupClassName` instead.",
     );
 
