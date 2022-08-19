@@ -1,5 +1,5 @@
 import React from 'react';
-import { AutoComplete, ConfigProvider } from '../../src';
+import { AutoComplete } from '../../src';
 
 export default () => {
   return (

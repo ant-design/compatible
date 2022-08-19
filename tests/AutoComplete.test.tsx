@@ -16,7 +16,7 @@ describe('AutoComplete', () => {
     );
 
     expect(errSpy).toHaveBeenCalledWith(
-      "Warning: [Compatible: AutoComplete] 'dropdownClassName' is deprecated. Please use 'popupClassName' instead.",
+      "Warning: [antd: AutoComplete] `dropdownClassName` is removed in v5, please use `popupClassName` instead.",
     );
 
     // TODO: Remove this when antd release version
