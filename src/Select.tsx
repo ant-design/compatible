@@ -17,7 +17,7 @@ const CompatibleSelect = React.forwardRef(
   ) => {
     warning(
       !dropdownClassName,
-      `[Compatible: Select] 'dropdownClassName' is deprecated. Please use 'popupClassName' instead.`,
+      "[antd: Select] `dropdownClassName` is removed in v5, please use `popupClassName` instead.",
     );
 
     return (

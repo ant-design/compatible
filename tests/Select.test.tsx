@@ -18,7 +18,7 @@ describe('Select', () => {
     );
 
     expect(errSpy).toHaveBeenCalledWith(
-      "Warning: [Compatible: Select] 'dropdownClassName' is deprecated. Please use 'popupClassName' instead.",
+      "Warning: [antd: Select] `dropdownClassName` is removed in v5, please use `popupClassName` instead.",
     );
 
     // TODO: Remove this when antd release version
