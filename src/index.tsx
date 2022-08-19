@@ -1,5 +1,3 @@
 export * from 'antd';
-import AutoComplete from './AutoComplete';
-import Cascader from './Cascader';
-
-export { AutoComplete,Cascader};
+export { default as AutoComplete } from './AutoComplete';
+export { default as Cascader } from './Cascader';
