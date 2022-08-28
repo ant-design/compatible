@@ -1,12 +1,13 @@
 import React from 'react';
-import { DatePicker } from '../src';
+import { DatePicker} from '../src';
+const { RangePicker } = DatePicker;
 import { render } from '@testing-library/react';
 
 describe('DatePicker', () => {
   it('DatePicker dropdownClassName', async () => {
     const errSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
 
-    const { container } = render(
+    render(
       <DatePicker dropdownClassName="test" />,
     );
 
@@ -23,8 +24,8 @@ describe('DatePicker', () => {
   it('DatePicker.RangePicker dropdownClassName', async () => {
     const errSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
 
-    const { container } = render(
-      <DatePicker.RangePicker dropdownClassName="test" />,
+    render(
+      <RangePicker dropdownClassName="test" />,
     );
 
     expect(errSpy).toHaveBeenCalledWith(

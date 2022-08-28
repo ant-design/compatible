@@ -1,7 +1,7 @@
 import React from 'react';
 import { Select } from '../../src';
 const { Option } = Select;
-console.log('Select',Select)
+
 export default () => {
   const handleChange = (value: string) => {
     console.log(`selected ${value}`);
