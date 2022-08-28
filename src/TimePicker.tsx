@@ -34,9 +34,7 @@ const CompatibleTimePicker = React.forwardRef(
   },
 );
 
-if (process.env.NODE_ENV !== 'production') {
-  CompatibleTimePicker.displayName = 'CompatibleTimePicker';
-}
+
 
 CompatibleTimePicker.RangePicker = React.forwardRef(
   (
@@ -45,7 +43,7 @@ CompatibleTimePicker.RangePicker = React.forwardRef(
   ) => {
     warning(
       !dropdownClassName,
-      "[antd: TimePicker] `dropdownClassName` is removed in v5, please use `popupClassName` instead.",
+      "[antd: RangePicker] `dropdownClassName` is removed in v5, please use `popupClassName` instead.",
     );
 
     return (
@@ -54,4 +52,7 @@ CompatibleTimePicker.RangePicker = React.forwardRef(
   },
 );
 
+if (process.env.NODE_ENV !== 'production') {
+  CompatibleTimePicker.displayName = 'CompatibleTimePicker';
+}
 export default CompatibleTimePicker;
