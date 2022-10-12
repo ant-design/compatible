@@ -49,6 +49,7 @@
     "react-dom": ">=16.0.0"
   },
   "devDependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.0.0",
     "@types/enzyme": "^3.10.5",
