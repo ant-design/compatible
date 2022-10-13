@@ -44,11 +44,12 @@
     "dayjs": "^1.11.4"
   },
   "peerDependencies": {
-    "antd": "^5.0.0-experimental.18",
+    "antd": "^5.0.0-alpha.1",
     "react": ">=16.0.0",
     "react-dom": ">=16.0.0"
   },
   "devDependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.0.0",
     "@types/enzyme": "^3.10.5",
@@ -57,7 +58,7 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@umijs/fabric": "^2.5.2",
-    "antd": "^5.0.0-experimental.18",
+    "antd": "^5.0.0-alpha.1",
     "dumi": "^1.1.0",
     "eslint": "^7.18.0",
     "father": "^4.0.0-rc.8",
