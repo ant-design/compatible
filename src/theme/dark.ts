@@ -2,12 +2,20 @@ import type { DerivativeFunc } from '@ant-design/cssinjs';
 import { generate } from '@ant-design/colors';
 import genColorMapToken from './genColorMapToken';
 import type { GenerateColorMap, GenerateNeutralColorMap } from 'antd/es/theme/themes/ColorMap';
-import { getSolidColor, getAlphaColor } from 'antd/es/theme/themes/dark/colorAlgorithm';
 import type { SeedToken } from 'antd/es/theme';
 import type { MapToken } from 'antd/es/theme/interface';
 import { theme } from 'antd';
+import { TinyColor } from '@ctrl/tinycolor';
 
 const {darkAlgorithm} = theme;
+
+export const getAlphaColor = (baseColor: string, alpha: number) =>
+  new TinyColor(baseColor).setAlpha(alpha).toRgbString();
+
+export const getSolidColor = (baseColor: string, brightness: number) => {
+  const instance = new TinyColor(baseColor);
+  return instance.lighten(brightness).toHexString();
+};
 
 const generateColorPalettes: GenerateColorMap = (baseColor: string) => {
   const colors = generate(baseColor, { theme: 'dark' });
