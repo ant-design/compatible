@@ -3,18 +3,17 @@ import { DislikeFilled, DislikeOutlined, LikeFilled, LikeOutlined } from '@ant-d
 import { Avatar, Tooltip } from 'antd';
 import { Comment } from '../../src';
 
-import { presetPalettes } from '@ant-design/colors'
-console.log(presetPalettes);
+// import { presetPalettes } from '@ant-design/colors'
+// console.log(presetPalettes);
 
+// const lines = [];
+// Object.keys(presetPalettes).forEach((key) => {
+//   for (let i = 0; i < 10; i += 1) {
+//   lines.push(`@${key}-${i + 1}: ${presetPalettes[key][i]};`);
+//   }
+// });
 
-const lines = [];
-Object.keys(presetPalettes).forEach((key) => {
-  for (let i = 0; i < 10; i += 1) {
-  lines.push(`@${key}-${i + 1}: ${presetPalettes[key][i]};`);
-  }
-});
-
-console.log(lines.join('\n'));
+// console.log(lines.join('\n'));
 
 const App: React.FC = () => {
   const [likes, setLikes] = useState(0);
@@ -66,7 +65,15 @@ const App: React.FC = () => {
           <span>8 hours ago</span>
         </Tooltip>
       }
-    />
+    >
+      <Comment
+        actions={actions}
+        author="Bamboo"
+        avatar={<Avatar src="https://joeschmoe.io/api/v1/random" alt="Bamboo" />}
+        content={<p>This is a nest comment</p>}
+        datetime="unknown"
+      ></Comment>
+    </Comment>
   );
 };
 
