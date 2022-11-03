@@ -93,7 +93,7 @@ const genSharedButtonStyle = (token: MergedToken): CSSInterpolation => {
         },
         '&-detail p': {
           whiteSpace: 'pre-wrap',
-          marginBottom: 0,
+          marginBlock: 0,
         },
       },
 
