@@ -1,11 +1,11 @@
-import { ThemeConfig } from 'antd/es/config-provider/context';
+import type { ThemeConfig } from 'antd/es/config-provider/context';
 import defaultAlgorithm from './default';
 import darkAlgorithm from './dark';
 
 export { defaultAlgorithm, darkAlgorithm };
 
 const v4Token: ThemeConfig = {
-  token: { radiusBase: 2, colorPrimary: '#1890ff', wireframe: true },
+  token: { borderRadius: 2, colorPrimary: '#1890ff', wireframe: true },
 }
 
 export const defaultTheme: ThemeConfig = {

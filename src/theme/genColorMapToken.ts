@@ -1,6 +1,7 @@
 import { TinyColor } from '@ctrl/tinycolor';
-import type { ColorMapToken, SeedToken } from '../../interface';
-import type { GenerateColorMap, GenerateNeutralColorMap } from '../ColorMap';
+import type { GenerateColorMap, GenerateNeutralColorMap } from 'antd/es/theme/themes/ColorMap';
+import type { SeedToken } from 'antd/es/theme';
+import type { ColorMapToken } from 'antd/es/theme/interface';
 
 interface PaletteGenerators {
   generateColorPalettes: GenerateColorMap;
@@ -87,5 +88,6 @@ export default function genColorMapToken(
     colorInfoTextActive: infoColors[10],
 
     colorBgMask: new TinyColor('#000').setAlpha(0.45).toRgbString(),
+    colorWhite: '#fff',
   };
 }
