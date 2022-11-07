@@ -1,11 +1,12 @@
 // Source:
 // https://github.com/ant-design/ant-design/blob/2c9fbc8f0c714c9de27fc2f54712acb69ac1abd8/components/style/themes/default.less
 import type { MapToken } from 'antd/es/theme/interface';
+import formatToken from 'antd/es/theme/util/alias';
 
-export type ReturnType = Record<string, string | number>;
+export default function convertLegacyToken(mapToken: MapToken) {
+  const token = formatToken(mapToken as any);
 
-export default function convertLegacyToken(token: MapToken): ReturnType {
-  const raw: Record<string, string | number | ((parser: typeof raw) => string | number)> = {
+  const raw = {
     theme: 'default',
     'ant-prefix': 'ant',
     'html-selector': 'html',
@@ -47,7 +48,7 @@ export default function convertLegacyToken(token: MapToken): ReturnType {
     'error-color-deprecated-bg': token.colorErrorBg,
     'error-color-deprecated-border': token.colorErrorBorder,
 
-    'highlight-color': token.colorError,
+    'highlight-color': token.colorHighlight,
     'normal-color': '#d9d9d9',
     white: token.colorWhite,
     black: '#000',
@@ -81,25 +82,25 @@ export default function convertLegacyToken(token: MapToken): ReturnType {
     'text-color': token.colorText,
     'text-color-secondary': token.colorTextSecondary,
     'text-color-inverse': token.colorWhite,
-    'icon-color': token.colorTextTertiary,
-    'icon-color-hover': token.colorText,
-    'heading-color': token.colorText,
+    'icon-color': token.colorIcon,
+    'icon-color-hover': token.colorIconHover,
+    'heading-color': token.colorTextHeading,
     'text-color-dark': 'fade(@white, 85%)',
     'text-color-secondary-dark': 'fade(@white, 65%)',
     'text-selection-bg': token.colorPrimary,
     'font-variant-base': 'tabular-nums',
     'font-feature-settings-base': 'tnum',
     'font-size-base': token.fontSize,
-    'font-size-lg': token.fontSizes[2],
-    'font-size-sm': token.fontSizes[0],
-    'heading-1-size': token.fontSizes[6],
-    'heading-2-size': token.fontSizes[5],
-    'heading-3-size': token.fontSizes[4],
-    'heading-4-size': token.fontSizes[3],
-    'heading-5-size': token.fontSizes[2],
+    'font-size-lg': token.fontSizeLG,
+    'font-size-sm': token.fontSizeSM,
+    'heading-1-size': token.fontSizeHeading1,
+    'heading-2-size': token.fontSizeHeading2,
+    'heading-3-size': token.fontSizeHeading3,
+    'heading-4-size': token.fontSizeHeading4,
+    'heading-5-size': token.fontSizeHeading5,
 
     // https://github.com/ant-design/ant-design/issues/20210
-    'line-height-base': token.lineHeights[1],
+    'line-height-base': token.lineHeight,
     'border-radius-base': token.borderRadius,
     'border-radius-sm': token.borderRadiusSM,
 
@@ -1075,9 +1076,22 @@ export default function convertLegacyToken(token: MapToken): ReturnType {
     'segmented-selected-bg': '@white',
     'segmented-label-color': 'fade(@black, 65%)',
     'segmented-label-hover-color': '#262626',
-  };
+  } as const;
 
-  const returnData: ReturnType = {};
+  // Fill colors. e.g. '@red-1', '@yellow-6'
+  Object.keys(token).forEach((key: any) => {
+    if (key !== key.toLowerCase()) {
+      return;
+    }
+
+    const value = token[key];
+    if (typeof value === 'string') {
+      raw[key] = value;
+    }
+  });
+
+  // Convert to string
+  const returnData: Record<keyof typeof raw, string> = {} as any;
 
   Object.keys(raw).forEach(key => {
     const value = raw[key];
@@ -1087,7 +1101,7 @@ export default function convertLegacyToken(token: MapToken): ReturnType {
     } else if (typeof value === 'number' && !key.includes('line-height')) {
       returnData[key] = `${value}px`;
     } else {
-      returnData[key] = value;
+      returnData[key] = `${value}`;
     }
   });
 
