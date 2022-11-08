@@ -44,7 +44,7 @@
     "dayjs": "^1.11.4"
   },
   "peerDependencies": {
-    "antd": "^5.0.0-alpha.1",
+    "antd": "^5.0.0-beta.0",
     "react": ">=16.0.0",
     "react-dom": ">=16.0.0"
   },
