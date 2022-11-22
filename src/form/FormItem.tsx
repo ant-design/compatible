@@ -2,7 +2,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import classNames from 'classnames';
-import Animate from 'rc-animate';
+// import Animate from 'rc-animate';
 import omit from 'rc-util/lib/omit';
 import { Row, Col, Form as V5Form } from 'antd';
 import type { FormItemInputContext } from 'antd/lib/form/context';
@@ -194,12 +194,12 @@ export default class FormItem extends React.Component<FormItemProps, any> {
     }
   };
 
-  onHelpAnimEnd = (_key: string, helpShow: boolean) => {
-    this.helpShow = helpShow;
-    if (!helpShow) {
-      this.setState({});
-    }
-  };
+  // onHelpAnimEnd = (_key: string, helpShow: boolean) => {
+  //   this.helpShow = helpShow;
+  //   if (!helpShow) {
+  //     this.setState({});
+  //   }
+  // };
 
   isRequired() {
     const { required } = this.props;
@@ -227,17 +227,19 @@ export default class FormItem extends React.Component<FormItemProps, any> {
     if (children) {
       this.helpShow = !!children;
     }
-    return (
-      <Animate
-        transitionName="show-help"
-        component=""
-        transitionAppear
-        key="help"
-        onEnd={this.onHelpAnimEnd}
-      >
-        {children}
-      </Animate>
-    );
+
+    return children;
+    // return (
+    //   <Animate
+    //     transitionName="show-help"
+    //     component=""
+    //     transitionAppear
+    //     key="help"
+    //     onEnd={this.onHelpAnimEnd}
+    //   >
+    //     {children}
+    //   </Animate>
+    // );
   }
 
   renderExtra(prefixCls: string) {
