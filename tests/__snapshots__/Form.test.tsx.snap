@@ -7,11 +7,3 @@ exports[`Form no hash 1`] = `
   />
 </div>
 `;
-
-exports[`Form work 1`] = `
-<div>
-  <form
-    class="ant-legacy-form ant-legacy-form-horizontal css-dev-only-do-not-override-1n1c08d"
-  />
-</div>
-`;
