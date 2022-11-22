@@ -5,7 +5,7 @@ import type { CSSInterpolation } from '@ant-design/cssinjs';
 import { useStyleRegister } from '@ant-design/cssinjs';
 import { theme as antdTheme, ConfigProvider } from 'antd';
 import type { GlobalToken } from 'antd/es/theme/interface';
-import { resetComponent } from 'antd/es/style';
+import { resetComponent } from 'antd/lib/style';
 
 interface MergedToken extends GlobalToken {
   componentCls: string;
