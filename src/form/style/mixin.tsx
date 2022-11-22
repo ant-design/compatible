@@ -76,3 +76,11 @@ export const resetForm = (token: MergedToken): CSSObject => {
     },
   };
 };
+
+export const genFormControlValidation = (componentCls: string, colorText: string): CSSObject => {
+  return {
+    [`${componentCls}-explain, ${componentCls}-split`]: {
+      color: colorText,
+    },
+  };
+};

@@ -5,14 +5,14 @@ import classNames from 'classnames';
 import Animate from 'rc-animate';
 import omit from 'rc-util/lib/omit';
 import { Row, Col, Form as V5Form } from 'antd';
-import type { FormItemInputContext } from 'antd/es/form/context';
+import type { FormItemInputContext } from 'antd/lib/form/context';
 import {
   CheckCircleFilled,
   CloseCircleFilled,
   ExclamationCircleFilled,
   LoadingOutlined,
 } from '@ant-design/icons';
-import type { ColProps } from 'antd/es/grid/col';
+import type { ColProps } from 'antd/lib/grid/col';
 import CompatibleConsumer from '../CompatibleConsumer';
 import type { ConfigConsumerProps } from '../CompatibleConsumer';
 import warning from '../_util/warning';

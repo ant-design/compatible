@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import createDOMForm from 'rc-form/lib/createDOMForm';
 import createFormField from 'rc-form/lib/createFormField';
 import omit from 'rc-util/lib/omit';
-import type { ColProps } from 'antd/es/grid/col';
+import type { ColProps } from 'antd/lib/grid/col';
 import { tuple } from '../_util/types';
 import warning from '../_util/warning';
 import FormItem from './FormItem';
@@ -16,7 +16,7 @@ import upgradeMessage from '../_util/upgradeMessage';
 import CompatibleConsumer from '../CompatibleConsumer';
 import type { ConfigConsumerProps } from '../CompatibleConsumer';
 import useStyle from './style';
-import { ConfigContext } from 'antd/es/config-provider';
+import { ConfigContext } from 'antd/lib/config-provider';
 
 type FormCreateOptionMessagesCallback = (...args: any[]) => string;
 

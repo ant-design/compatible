@@ -1,7 +1,7 @@
 // Source:
 // https://github.com/ant-design/ant-design/blob/2c9fbc8f0c714c9de27fc2f54712acb69ac1abd8/components/style/themes/default.less
-import type { MapToken } from 'antd/es/theme/interface';
-import formatToken from 'antd/es/theme/util/alias';
+import type { MapToken } from 'antd/lib/theme/interface';
+import formatToken from 'antd/lib/theme/util/alias';
 
 export default function convertLegacyToken(mapToken: MapToken) {
   const token = formatToken(mapToken as any);

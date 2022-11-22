@@ -1,7 +1,7 @@
 import { TinyColor } from '@ctrl/tinycolor';
-import type { GenerateColorMap, GenerateNeutralColorMap } from 'antd/es/theme/themes/ColorMap';
-import type { SeedToken } from 'antd/es/theme';
-import type { ColorMapToken } from 'antd/es/theme/interface';
+import type { GenerateColorMap, GenerateNeutralColorMap } from 'antd/lib/theme/themes/ColorMap';
+import type { SeedToken } from 'antd/lib/theme';
+import type { ColorMapToken } from 'antd/lib/theme/interface';
 
 interface PaletteGenerators {
   generateColorPalettes: GenerateColorMap;

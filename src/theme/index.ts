@@ -1,4 +1,4 @@
-import type { ThemeConfig } from 'antd/es/config-provider/context';
+import type { ThemeConfig } from 'antd/lib/config-provider/context';
 import defaultAlgorithm from './default';
 import darkAlgorithm from './dark';
 

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import type { ColProps } from 'antd/es/grid/col';
+import type { ColProps } from 'antd/lib/grid/col';
 import type { FormLabelAlign } from './FormItem';
 
 export interface FormContextProps {

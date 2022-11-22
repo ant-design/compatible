@@ -4,15 +4,17 @@ import * as React from 'react';
 import type { CSSInterpolation } from '@ant-design/cssinjs';
 import { useStyleRegister } from '@ant-design/cssinjs';
 import { theme as antdTheme, ConfigProvider } from 'antd';
-import type { GlobalToken } from 'antd/es/theme/interface';
-import { resetComponent, clearFix } from 'antd/es/style';
+import type { GlobalToken } from 'antd/lib/theme/interface';
+import { resetComponent, clearFix } from 'antd/lib/style';
 import { resetForm } from './mixin';
 import { genFormLayoutStyle } from './layout';
+import { genFeedbackStyle } from './feedback';
 
 export interface MergedToken extends GlobalToken {
   componentCls: string;
   antCls: string;
   iconCls: string;
+  formExplainPrecision: number;
 }
 
 // ============================== Export ==============================
@@ -35,9 +37,9 @@ const genFormStyle = (token: MergedToken): CSSInterpolation => {
     motionDurationSlow,
     paddingXXS,
     paddingXS,
+    formExplainPrecision,
   } = token;
 
-  const formExplainPrecision = 1;
   const formExplainHeight = Math.floor(fontSize * lineHeight);
   const formHelpMarginTop = (controlHeight - controlHeightLG) / 2 + 2;
 
@@ -147,20 +149,6 @@ const genFormStyle = (token: MergedToken): CSSInterpolation => {
         display: 'block',
         textAlign: 'center',
       },
-
-      // ==================== Form Item Status =====================
-      [`${componentCls}-item-feedback-icon-success`]: {
-        color: token.colorSuccess,
-      },
-      [`${componentCls}-item-feedback-icon-validating`]: {
-        color: token.colorInfo,
-      },
-      [`${componentCls}-item-feedback-icon-warning`]: {
-        color: token.colorWarning,
-      },
-      [`${componentCls}-item-feedback-icon-error`]: {
-        color: token.colorError,
-      },
     },
   };
 };
@@ -185,9 +173,14 @@ export default function useStyle(
           componentCls: `.${prefixCls}`,
           antCls: `.${rootPrefixCls}`,
           iconCls: `.${iconPrefixCls}`,
+          formExplainPrecision: 1,
           ...token,
         };
-        return [genFormStyle(mergedToken), genFormLayoutStyle(mergedToken)];
+        return [
+          genFormStyle(mergedToken),
+          genFormLayoutStyle(mergedToken),
+          genFeedbackStyle(mergedToken),
+        ];
       },
     ),
     hashId,

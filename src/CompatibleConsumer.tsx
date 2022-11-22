@@ -1,5 +1,5 @@
 import { ConfigProvider } from 'antd';
-import type { ConfigConsumerProps } from 'antd/es/config-provider';
+import type { ConfigConsumerProps } from 'antd/lib/config-provider';
 
 export { ConfigConsumerProps };
 
