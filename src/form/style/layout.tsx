@@ -46,14 +46,7 @@ export const genFormLayoutStyle = (token: MergedToken): CSSInterpolation => {
   const {
     antCls,
     componentCls,
-    colorText,
-    colorTextSecondary,
-    fontSizeLG,
     lineHeight,
-    lineWidth,
-    lineType,
-    colorBorder,
-    fontSize,
     formExplainPrecision,
     marginLG,
   } = token;
