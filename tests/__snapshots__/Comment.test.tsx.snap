@@ -1,9 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Comment work 1`] = `
+exports[`Comment no hash 1`] = `
 <div>
   <div
     class="ant-comment"
+  >
+    <div
+      class="ant-comment-inner"
+    >
+      <div
+        class="ant-comment-content"
+      >
+        <div
+          class="ant-comment-content-detail"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Comment work 1`] = `
+<div>
+  <div
+    class="ant-comment css-dev-only-do-not-override-1n1c08d"
   >
     <div
       class="ant-comment-inner"

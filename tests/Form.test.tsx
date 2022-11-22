@@ -1,11 +1,11 @@
 import React from 'react';
 import { ConfigProvider } from 'antd';
-import { Comment } from '../src';
+import { Form } from '../src';
 import { render } from '@testing-library/react';
 
-describe('Comment', () => {
+describe('Form', () => {
   it('work', () => {
-    const { container } = render(<Comment content="" />);
+    const { container } = render(<Form />);
     expect(container).toMatchSnapshot();
   });
 
@@ -16,7 +16,7 @@ describe('Comment', () => {
           hashed: false,
         }}
       >
-        <Comment content="" />
+        <Form />
       </ConfigProvider>,
     );
     expect(container).toMatchSnapshot();

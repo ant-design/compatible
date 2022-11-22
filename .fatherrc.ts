@@ -5,6 +5,9 @@ export default defineConfig({
   cjs: { output: 'lib' },
   esm: {
     output: 'es',
-    alias: { 'rc-util/lib': 'rc-util/es' },
+    alias: {
+      'rc-util/lib': 'rc-util/es',
+      'antd/lib': 'antd/es',
+    },
   },
 });
