@@ -32,7 +32,7 @@ const genSharedButtonStyle = (token: MergedToken): CSSInterpolation => {
 
   return {
     [componentCls]: {
-      ...resetComponent(token),
+      ...resetComponent(token) as any,
 
       position: 'relative',
       backgroundColor: colorBgContainer,

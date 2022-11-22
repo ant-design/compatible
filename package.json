@@ -48,7 +48,7 @@
     "rc-form": "^2.4.12"
   },
   "peerDependencies": {
-    "antd": "^5.0.0-beta.0",
+    "antd": "^5.0.1",
     "react": ">=16.0.0",
     "react-dom": ">=16.0.0"
   },
@@ -63,7 +63,7 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@umijs/fabric": "^2.5.2",
-    "antd": "next",
+    "antd": "^5.0.1",
     "dumi": "^1.1.0",
     "eslint": "^7.18.0",
     "father": "^4.0.0-rc.8",

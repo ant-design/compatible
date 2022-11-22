@@ -4,7 +4,8 @@ import * as ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import Animate from 'rc-animate';
 import omit from 'rc-util/lib/omit';
-import { Row, Col } from 'antd';
+import { Row, Col, Form as V5Form } from 'antd';
+import type { FormItemInputContext } from 'antd/es/form/context';
 import {
   CheckCircleFilled,
   CloseCircleFilled,
@@ -20,11 +21,21 @@ import { FIELD_META_PROP, FIELD_DATA_PROP } from './constants';
 import FormContext from './context';
 import type { FormContextProps } from './context';
 
+const V5FormItemInputContext = (V5Form.Item.useStatus as any)
+  .Context as typeof FormItemInputContext;
+
 const ValidateStatuses = tuple('success', 'warning', 'error', 'validating', '');
 
 const FormLabelAligns = tuple('left', 'right');
 
 export type FormLabelAlign = typeof FormLabelAligns[number];
+
+const IconMap = {
+  success: CheckCircleFilled,
+  warning: ExclamationCircleFilled,
+  error: CloseCircleFilled,
+  validating: LoadingOutlined,
+};
 
 export interface FormItemProps {
   prefixCls?: string;
@@ -240,52 +251,72 @@ export default class FormItem extends React.Component<FormItemProps, any> {
     c2: React.ReactNode,
     c3: React.ReactNode,
   ) {
-    const { props } = this;
+    const { hasFeedback, validateStatus } = this.props;
     const onlyControl = this.getOnlyControl;
-    const validateStatus =
-      props.validateStatus === undefined && onlyControl
-        ? this.getValidateStatus()
-        : props.validateStatus;
+    const mergedValidateStatus =
+      validateStatus === undefined && onlyControl ? this.getValidateStatus() : validateStatus;
 
     let classes = `${prefixCls}-item-control`;
-    if (validateStatus) {
+    if (mergedValidateStatus) {
       classes = classNames(`${prefixCls}-item-control`, {
-        'has-feedback': props.hasFeedback || validateStatus === 'validating',
-        'has-success': validateStatus === 'success',
-        'has-warning': validateStatus === 'warning',
-        'has-error': validateStatus === 'error',
-        'is-validating': validateStatus === 'validating',
+        'has-feedback': hasFeedback || mergedValidateStatus === 'validating',
+        'has-success': mergedValidateStatus === 'success',
+        'has-warning': mergedValidateStatus === 'warning',
+        'has-error': mergedValidateStatus === 'error',
+        'is-validating': mergedValidateStatus === 'validating',
       });
     }
 
-    let iconType: React.ReactNode = null;
-    switch (validateStatus) {
-      case 'success':
-        iconType = <CheckCircleFilled />;
-        break;
-      case 'warning':
-        iconType = <ExclamationCircleFilled />;
-        break;
-      case 'error':
-        iconType = <CloseCircleFilled />;
-        break;
-      case 'validating':
-        iconType = <LoadingOutlined />;
-        break;
-      default:
-        break;
-    }
+    // let iconType: React.ReactNode = null;
+    // switch (validateStatus) {
+    //   case 'success':
+    //     iconType = <CheckCircleFilled />;
+    //     break;
+    //   case 'warning':
+    //     iconType = <ExclamationCircleFilled />;
+    //     break;
+    //   case 'error':
+    //     iconType = <CloseCircleFilled />;
+    //     break;
+    //   case 'validating':
+    //     iconType = <LoadingOutlined />;
+    //     break;
+    //   default:
+    //     break;
+    // }
 
-    const icon =
-      props.hasFeedback && iconType ? (
-        <span className={`${prefixCls}-item-children-icon`}>{iconType}</span>
-      ) : null;
+    // const icon =
+    //   props.hasFeedback && iconType ? (
+    //     <span className={`${prefixCls}-item-children-icon`}>{iconType}</span>
+    //   ) : null;
+
+    // ========================== Feedback ==========================
+    const IconComponent = mergedValidateStatus && IconMap[mergedValidateStatus];
+    const feedbackIcon = IconComponent ? (
+      <span
+        className={classNames(
+          `${prefixCls}-item-feedback-icon`,
+          `${prefixCls}-item-feedback-icon-${mergedValidateStatus}`,
+        )}
+      >
+        <IconComponent />
+      </span>
+    ) : null;
 
     return (
       <div className={classes}>
         <span className={`${prefixCls}-item-children`}>
-          {c1}
-          {icon}
+          <V5FormItemInputContext.Provider
+            value={{
+              status: mergedValidateStatus,
+              feedbackIcon,
+              hasFeedback,
+              isFormItemInput: true,
+            }}
+          >
+            {c1}
+          </V5FormItemInputContext.Provider>
+          {/* {icon} */}
         </span>
         {c2}
         {c3}

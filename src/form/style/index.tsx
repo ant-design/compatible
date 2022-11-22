@@ -7,6 +7,7 @@ import { theme as antdTheme, ConfigProvider } from 'antd';
 import type { GlobalToken } from 'antd/es/theme/interface';
 import { resetComponent, clearFix } from 'antd/es/style';
 import { resetForm } from './mixin';
+import { genFormLayoutStyle } from './layout';
 
 export interface MergedToken extends GlobalToken {
   componentCls: string;
@@ -42,7 +43,7 @@ const genFormStyle = (token: MergedToken): CSSInterpolation => {
 
   return {
     [componentCls]: {
-      ...resetComponent(token),
+      ...(resetComponent(token) as any),
       ...resetForm(token),
       [`${componentCls}-item-required::before`]: {
         display: 'inline-block',
@@ -83,7 +84,7 @@ const genFormStyle = (token: MergedToken): CSSInterpolation => {
           },
         },
 
-        ...resetComponent(token),
+        ...(resetComponent(token) as any),
 
         marginBottom: marginLG,
         verticalAlign: 'top',
@@ -147,7 +148,19 @@ const genFormStyle = (token: MergedToken): CSSInterpolation => {
         textAlign: 'center',
       },
 
-      // ========================== Form ===========================
+      // ==================== Form Item Status =====================
+      [`${componentCls}-item-feedback-icon-success`]: {
+        color: token.colorSuccess,
+      },
+      [`${componentCls}-item-feedback-icon-validating`]: {
+        color: token.colorInfo,
+      },
+      [`${componentCls}-item-feedback-icon-warning`]: {
+        color: token.colorWarning,
+      },
+      [`${componentCls}-item-feedback-icon-error`]: {
+        color: token.colorError,
+      },
     },
   };
 };
@@ -161,7 +174,12 @@ export default function useStyle(
 
   return [
     useStyleRegister(
-      { theme, token, hashId, path: ['compatible', 'Form', prefixCls, iconPrefixCls] },
+      {
+        theme: theme as any,
+        token,
+        hashId,
+        path: ['compatible', 'Form', prefixCls, iconPrefixCls],
+      },
       () => {
         const mergedToken = {
           componentCls: `.${prefixCls}`,
@@ -169,7 +187,7 @@ export default function useStyle(
           iconCls: `.${iconPrefixCls}`,
           ...token,
         };
-        return [genFormStyle(mergedToken)];
+        return [genFormStyle(mergedToken), genFormLayoutStyle(mergedToken)];
       },
     ),
     hashId,
