@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form no hash 1`] = `
+<div>
+  <form
+    class="ant-legacy-form ant-legacy-form-horizontal"
+  />
+</div>
+`;

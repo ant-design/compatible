@@ -4,7 +4,7 @@ import * as React from 'react';
 import type { CSSInterpolation } from '@ant-design/cssinjs';
 import { useStyleRegister } from '@ant-design/cssinjs';
 import { theme as antdTheme, ConfigProvider } from 'antd';
-import type { GlobalToken } from 'antd/es/theme/interface';
+import type { GlobalToken } from 'antd/lib/theme/interface';
 import { resetComponent } from 'antd/lib/style';
 
 interface MergedToken extends GlobalToken {
@@ -32,7 +32,7 @@ const genSharedButtonStyle = (token: MergedToken): CSSInterpolation => {
 
   return {
     [componentCls]: {
-      ...resetComponent(token),
+      ...resetComponent(token) as any,
 
       position: 'relative',
       backgroundColor: colorBgContainer,
