@@ -1,5 +1,3 @@
-// import '../../style/index.less';
-// import './index.less';
 import * as React from 'react';
 import type { CSSInterpolation } from '@ant-design/cssinjs';
 import { useStyleRegister } from '@ant-design/cssinjs';
