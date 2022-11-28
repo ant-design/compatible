@@ -1,12 +1,12 @@
 import Form from './Form';
 
-export {
+export type {
   FormProps,
   FormComponentProps,
   FormCreateOption,
   ValidateCallback,
   ValidationRule,
 } from './Form';
-export { FormItemProps } from './FormItem';
+export type { FormItemProps } from './FormItem';
 
 export default Form;
