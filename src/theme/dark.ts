@@ -2,8 +2,7 @@ import type { DerivativeFunc } from '@ant-design/cssinjs';
 import { generate } from '@ant-design/colors';
 import genColorMapToken from './genColorMapToken';
 import type { GenerateColorMap, GenerateNeutralColorMap } from 'antd/lib/theme/themes/ColorMap';
-import type { SeedToken } from 'antd/lib/theme';
-import type { MapToken } from 'antd/lib/theme/interface';
+import type { MapToken, SeedToken } from 'antd/lib/theme/interface';
 import { theme } from 'antd';
 import { TinyColor } from '@ctrl/tinycolor';
 
