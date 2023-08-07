@@ -64,14 +64,14 @@ const genFormStyle = (token: MergedToken): CSSInterpolation => {
       [`${componentCls}-item-label > label`]: {
         color: colorTextHeading,
         '&::after': {
-          content: ':',
+          content: '":"',
         },
         position: 'relative',
         top: -0.5,
         margin: `0 ${marginXS}px 0 ${marginXXS / 2}px`,
       },
       [`&${componentCls}-item-no-colon::after`]: {
-        content: ' ',
+        content: '" "',
       },
 
       // ======================== Form Item ========================
