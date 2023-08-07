@@ -39,7 +39,7 @@ describe('Less', () => {
     const legacyToken = convertLegacyToken(mapToken);
 
     // Value exist check
-    expect(legacyToken['line-height-base']).toEqual(`${mapToken.lineHeights[1]}`);
+    expect(legacyToken['line-height-base']).toEqual(`${mapToken.lineHeight}`);
     expect(legacyToken['border-radius-base']).toEqual(`${mapToken.borderRadius}px`);
 
     // Less compile check
