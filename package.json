@@ -25,6 +25,7 @@
   },
   "scripts": {
     "start": "dumi dev",
+    "dev": "father dev",
     "docs:build": "dumi build",
     "docs:deploy": "gh-pages -d docs-dist",
     "compile": "father build",
