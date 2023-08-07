@@ -13,14 +13,14 @@ export const defaultTheme: ThemeConfig = {
   algorithm: defaultAlgorithm,
   components: {
     Menu: {
-      radiusItem: 0,
-      radiusSubMenuItem: 0,
-      colorItemTextHover: '#1890ff',
-      colorItemTextSelected: '#1890ff',
-      colorItemBgSelected: '#e6f7ff',
-      colorActiveBarWidth: 3,
+      itemBorderRadius: 0,
+      subMenuItemBorderRadius: 0,
+      itemHoverColor: '#1890ff',
+      itemSelectedColor: '#1890ff',
+      itemSelectedBg: '#e6f7ff',
+      activeBarWidth: 3,
       itemMarginInline: 0,
-      colorItemBgHover: 'transparent',
+      itemHoverBg: 'transparent',
     },
   },
 }
@@ -30,14 +30,14 @@ export const darkTheme: ThemeConfig = {
   algorithm: darkAlgorithm,
   components: {
     Menu: {
-      radiusItem: 0,
-      radiusSubMenuItem: 0,
-      colorItemTextHover: '#1890ff',
-      colorItemTextSelected: '#1890ff',
-      colorItemBgSelected: '#111b26',
-      colorActiveBarWidth: 3,
+      itemBorderRadius: 0,
+      subMenuItemBorderRadius: 0,
+      itemHoverColor: 'transparent',
+      itemSelectedColor: '#1890ff',
+      itemSelectedBg: '#111b26',
+      activeBarWidth: 3,
       itemMarginInline: 0,
-      colorItemBgHover: 'transparent',
+      itemHoverBg: 'transparent',
     },
   },
 }
