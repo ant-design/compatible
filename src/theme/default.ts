@@ -3,8 +3,7 @@ import { generate } from '@ant-design/colors';
 import genColorMapToken from './genColorMapToken';
 import { theme } from 'antd';
 import type { GenerateColorMap, GenerateNeutralColorMap } from 'antd/lib/theme/themes/ColorMap';
-import type { SeedToken } from 'antd/lib/theme';
-import type { MapToken } from 'antd/lib/theme/interface';
+import type { MapToken, SeedToken } from 'antd/lib/theme/interface';
 import { TinyColor } from '@ctrl/tinycolor';
 
 const {defaultAlgorithm} = theme;
