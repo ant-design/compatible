@@ -2,12 +2,11 @@ import type { DerivativeFunc } from '@ant-design/cssinjs';
 import { generate } from '@ant-design/colors';
 import genColorMapToken from './genColorMapToken';
 import type { GenerateColorMap, GenerateNeutralColorMap } from 'antd/lib/theme/themes/ColorMap';
-import type { SeedToken } from 'antd/lib/theme';
-import type { MapToken } from 'antd/lib/theme/interface';
+import type { MapToken, SeedToken } from 'antd/lib/theme/interface';
 import { theme } from 'antd';
 import { TinyColor } from '@ctrl/tinycolor';
 
-const {darkAlgorithm} = theme;
+const { darkAlgorithm } = theme;
 
 export const getAlphaColor = (baseColor: string, alpha: number) =>
   new TinyColor(baseColor).setAlpha(alpha).toRgbString();
@@ -43,6 +42,7 @@ const generateNeutralColorPalettes: GenerateNeutralColorMap = (
   return {
     colorBgBase,
     colorTextBase,
+    colorBgBlur: 'transparent',
 
     colorText: getAlphaColor(colorTextBase, 0.85),
     colorTextSecondary: getAlphaColor(colorTextBase, 0.45), // Different from v5
@@ -72,7 +72,7 @@ const derivative: DerivativeFunc<SeedToken, MapToken> = (token, mapToken) => {
     ...mergedMapToken,
 
     // Colors
-    ...genColorMapToken(mapToken ??token, {
+    ...genColorMapToken(mapToken ?? token, {
       generateColorPalettes,
       generateNeutralColorPalettes,
     }),

@@ -191,10 +191,10 @@ export default function convertLegacyToken(mapToken: MapToken) {
     'shadow-color': 'rgba(0, 0, 0, 0.15)',
     'shadow-color-inverse': token.colorBgContainer,
     'box-shadow-base': token.boxShadow,
-    'shadow-1-up': token.boxShadowDrawerUp,
-    'shadow-1-down': token.boxShadowDrawerDown,
-    'shadow-1-left': token.boxShadowDrawerLeft,
-    'shadow-1-right': token.boxShadowDrawerRight,
+    'shadow-1-up': (token as any).boxShadowDrawerUp,
+    'shadow-1-down': (token as any).boxShadowDrawerDown,
+    'shadow-1-left': (token as any).boxShadowDrawerLeft,
+    'shadow-1-right': (token as any).boxShadowDrawerRight,
     'shadow-2': token.boxShadowSecondary,
 
     // ==========================================================================

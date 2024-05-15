@@ -1,7 +1,6 @@
 import { TinyColor } from '@ctrl/tinycolor';
 import type { GenerateColorMap, GenerateNeutralColorMap } from 'antd/lib/theme/themes/ColorMap';
-import type { SeedToken } from 'antd/lib/theme';
-import type { ColorMapToken } from 'antd/lib/theme/interface';
+import type { ColorMapToken, SeedToken } from 'antd/lib/theme/interface';
 
 interface PaletteGenerators {
   generateColorPalettes: GenerateColorMap;
@@ -32,6 +31,10 @@ export default function genColorMapToken(
   return {
     ...neutralColors,
 
+    colorLink: primaryColors[6],
+    colorLinkHover: primaryColors[4],
+    colorLinkActive: primaryColors[7],
+
     colorPrimaryBg: primaryColors[1],
     colorPrimaryBgHover: primaryColors[2],
     colorPrimaryBorder: primaryColors[3],
@@ -57,6 +60,7 @@ export default function genColorMapToken(
     colorErrorBg: errorColors[1],
     colorErrorBgHover: errorColors[2],
     colorErrorBorder: errorColors[3],
+    colorErrorBgActive: errorColors[3],
     colorErrorBorderHover: errorColors[4],
     colorErrorHover: errorColors[5],
     colorError: errorColors[6],
