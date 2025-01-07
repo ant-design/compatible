@@ -62,9 +62,7 @@ export interface IconComponent<P> extends React.FC<P> {
   setTwoToneColor: typeof setTwoToneColor;
 }
 
-const iconsMap: {
-  [key: string]: any;
-} = allIcons;
+const iconsMap: Record<string, any> = allIcons;
 
 const LegacyTypeIcon: React.FC<LegacyTypeIconProps> = props => {
   const { type, theme } = props;

@@ -142,7 +142,7 @@ export interface ValidateFieldsOptions {
 // function create
 export interface WrappedFormUtils<V = any> {
   /** 获取一组输入控件的值，如不传入参数，则获取全部组件的值 */
-  getFieldsValue(fieldNames?: string[]): { [field: string]: any };
+  getFieldsValue(fieldNames?: string[]): Record<string, any>;
   /** 获取一个输入控件的值 */
   getFieldValue(fieldName: string): any;
   /** 设置一组输入控件的值 */
