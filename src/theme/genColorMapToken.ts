@@ -59,6 +59,9 @@ export default function genColorMapToken(
 
     colorErrorBg: errorColors[1],
     colorErrorBgHover: errorColors[2],
+    colorErrorBgFilledHover: new TinyColor(errorColors[1])
+      .mix(new TinyColor(errorColors[3]), 50)
+      .toHexString(),
     colorErrorBorder: errorColors[3],
     colorErrorBgActive: errorColors[3],
     colorErrorBorderHover: errorColors[4],
