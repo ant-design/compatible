@@ -41,6 +41,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@ant-design/cssinjs": "^1.23.0",
     "@ctrl/tinycolor": "^3.6.1",
     "classnames": "^2.2.6",
     "dayjs": "^1.11.4",
