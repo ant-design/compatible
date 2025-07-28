@@ -52,7 +52,7 @@ const App: React.FC = () => {
     <Comment
       actions={actions}
       author={<a>Han Solo</a>}
-      avatar={<Avatar src="https://joeschmoe.io/api/v1/random" alt="Han Solo" />}
+      avatar={<Avatar src="https://joesch.moe/api/v1/random" alt="Han Solo" />}
       content={
         <p>
           We supply a series of design principles, practical patterns and high quality design
@@ -69,7 +69,7 @@ const App: React.FC = () => {
       <Comment
         actions={actions}
         author="Bamboo"
-        avatar={<Avatar src="https://joeschmoe.io/api/v1/random" alt="Bamboo" />}
+        avatar={<Avatar src="https://joesch.moe/api/v1/random" alt="Bamboo" />}
         content={<p>This is a nest comment</p>}
         datetime="unknown"
       ></Comment>
