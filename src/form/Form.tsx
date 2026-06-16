@@ -290,9 +290,34 @@ const FormFC = React.forwardRef((props: FormProps, ref: any) => {
 function create<TOwnProps extends FormComponentProps>(
   options: FormCreateOption<TOwnProps> = {},
 ): FormWrappedProps<TOwnProps> {
+  const mapProps = (options as any).mapProps;
+
   return createDOMForm({
     fieldNameProp: 'id',
     ...options,
+    mapProps(props: any) {
+      const mappedProps = mapProps ? mapProps.call(this, props) : props;
+      const { form } = mappedProps;
+      const fieldNames = new Set<string>();
+      const getFieldDecorator = form.getFieldDecorator;
+
+      return {
+        ...mappedProps,
+        form: {
+          ...form,
+          getFieldDecorator(name: string, fieldOptions?: GetFieldDecoratorOptions) {
+            const fieldName = String(name);
+            const duplicated = fieldNames.has(fieldName);
+            fieldNames.add(fieldName);
+
+            return getFieldDecorator(
+              name,
+              duplicated ? { ...fieldOptions, preserve: true } : fieldOptions,
+            );
+          },
+        },
+      };
+    },
     fieldMetaProp: FIELD_META_PROP,
     fieldDataProp: FIELD_DATA_PROP,
   });
